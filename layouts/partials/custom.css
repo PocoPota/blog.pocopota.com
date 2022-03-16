@@ -1,0 +1,267 @@
+@charset "UTF-8";
+header.l-header {
+  border-top: solid 6px #43759D;
+}
+header.l-header h1 a {
+  display: block;
+}
+header.l-header h1 a img {
+  height: 90px;
+}
+
+.mcol.c8 {
+  margin-top: 1rem;
+}
+
+.mrow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.mrow .mcol {
+  float: none;
+}
+
+article.li {
+  height: auto !important;
+}
+article.li .inner {
+  padding: 0.6rem 0.8rem !important;
+}
+article.li .inner h2 {
+  font-size: 1rem !important;
+}
+article.li:hover {
+  opacity: 0.8;
+}
+article.li .thumb {
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: auto !important;
+}
+
+aside section {
+  box-shadow: 0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px rgba(63, 63, 68, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+aside section header {
+  background-color: #43759D;
+  color: #fff;
+  margin: 0 !important;
+  padding: 10px;
+  border-radius: 4px 4px 0 0;
+}
+aside section .author {
+  border-radius: 0 0 4px 4px;
+  box-shadow: none;
+}
+aside section .articles.sm {
+  background-color: #fff;
+  padding: 2px 10px;
+  margin: 0;
+  border-radius: 0 0 4px 4px;
+}
+aside section .articles.sm article:hover {
+  opacity: 0.7;
+}
+aside section .terms {
+  margin: 0;
+  padding: 8px 10px;
+  background-color: #fff;
+  border-radius: 0 0 4px 4px;
+}
+aside section .terms li a:hover {
+  opacity: 0.7;
+}
+aside section .side-info {
+  background-color: #fff;
+  padding: 0.8rem 1rem;
+  border-radius: 0 0 4px 4px;
+}
+aside section .side-info ul li {
+  list-style: none;
+  font-size: 14px;
+  background-color: #ECEFF1;
+  border-radius: 2px;
+  margin: 6px auto;
+  color: #000;
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+}
+aside section .side-info ul li a {
+  color: #000;
+  display: block;
+  padding: 0 10px;
+  border-radius: 2px;
+}
+aside section .side-info ul li a:hover {
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+}
+
+footer div p {
+  text-align: center;
+  font-size: 12px;
+}
+
+article.sn .thumb {
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: auto !important;
+}
+
+/* アフィリエイト用ボックスCSS開始 */
+.affiliate-link-box {
+  border: #dadada solid 1px;
+  display: flex;
+  flex-direction: row;
+}
+
+.affiliate-link-box a {
+  text-decoration: none;
+}
+
+.affiliate-link-box img {
+  margin: 10px 25px;
+  height: 160px;
+  width: 160px;
+}
+
+.affiliate-box-information {
+  margin-right: 10px;
+}
+
+.product-name {
+  font-size: 20px;
+  margin-bottom: 0;
+  color: black;
+}
+
+.maker-name {
+  font-size: 11px;
+  margin-top: 3px;
+  color: gray;
+}
+
+.affiliate-link-buttons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+  margin-left: 5px;
+}
+
+.affiliate-link-buttons div {
+  padding: 3px 10px;
+  border-radius: 3px;
+  margin-right: 10px;
+  box-shadow: 1px 1px 5px #a7a7a7;
+  font-size: 13px;
+}
+
+.affiliate-link-buttons a {
+  color: white;
+}
+
+.affiliate-link-buttons div:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.affiliate-button-amazon {
+  background-color: #FF9900;
+}
+
+.affiliate-button-rakuten {
+  background-color: #B31E23;
+}
+
+.affiliate-button-yahoo {
+  background-color: #FF0033;
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 750px) {
+  .affiliate-link-box {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .affiliate-link-box img {
+    width: 80%;
+    height: auto;
+    margin: auto;
+  }
+
+  .product-name, .maker-name {
+    margin: auto 5px;
+  }
+
+  .product-name {
+    line-height: 22px;
+  }
+
+  .affiliate-link-buttons {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  .affiliate-link-buttons div {
+    width: 83%;
+    margin: 5px auto;
+  }
+
+  .affiliate-box-information {
+    width: 100%;
+    margin: 0;
+  }
+}
+/* アフィリエイト用ボックスCSS終了 */
+pre {
+  margin: 1rem 0 !important;
+}
+
+/* 記事内用チェックボックスCSS開始 */
+/* head内にアイコン用linkあり */
+.check-box {
+  color: black;
+  background-color: #bcdeffa6;
+  border: solid 3px #4c89bb;
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 7px;
+}
+
+.check-box-title {
+  color: white;
+  background-color: #4c89bb;
+  margin: -10px;
+  width: 40%;
+  padding: 5px 15px;
+  border-radius: 3px;
+}
+
+.check-box-title i {
+  margin-right: 5px;
+}
+
+.check-box-contents {
+  margin-top: 20px;
+  margin-left: 25px;
+}
+
+.check-box-contents-inner {
+  display: block;
+  margin: -10px auto;
+}
+
+.check-box-contents-inner:before {
+  content: "●";
+  font-size: 10px;
+  margin-right: 10px;
+}
+
+/*記事内用チェックボックスCSS終了 */

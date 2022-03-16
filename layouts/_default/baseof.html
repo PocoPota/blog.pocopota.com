@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ block "title" . }}{{ end }}{{ .Site.Title }}</title>
+    {{ partial "meta.html" . }}
+    {{ block "meta" . }}{{ end }}
+
+    <link rel="canonical" href="{{ .Permalink }}">
+
+    {{ with .Site.Params.googlefonts }}
+    <link href="{{ . }}" rel="stylesheet">
+    {{ else }}
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
+    {{ end }}
+    {{ if .Site.Params.EnableHighlight | default false }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css">
+    {{ end }}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" crossorigin="anonymous">
+    <style>
+{{ with resources.Get "styles.scss" | toCSS }}
+  {{ replace .Content `@charset "UTF-8";` "" | safeCSS }}
+{{ end }}
+{{ if .Site.Params.Author }}
+  {{ with resources.Get "author.scss" | toCSS }}
+    {{ replace .Content `@charset "UTF-8";` "" | safeCSS }}
+  {{ end }}
+{{ end }}
+
+.thumb {
+  background-image: url("{{ "images/default.jpg" | absURL }}");
+  background-size: cover;
+  background-position: center;
+}
+{{ range $p := .Site.RegularPages }}
+  {{ with $p.Params.thumbnail }}
+.thumb-{{ $p.File.UniqueID }} {
+  background-image: url("{{ . | absURL }}");
+}
+  {{ end }}
+{{ end }}
+
+{{ with .Site.Params.fontfamily }} body { font-family: {{ . | safeCSS }}; } {{ end }}
+{{ with .Site.Params.logofontfamily }} .h-logo { font-family: {{ . | safeCSS }}; } {{ end }}
+{{ partial "custom.css" . | safeCSS }}
+    </style>
+{{ if and .Site.GoogleAnalytics (ne (getenv "HUGO_ENV") "DEV") }}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ .Site.GoogleAnalytics }}');
+</script>
+{{ end }}
+<link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <header class="l-header">
+        <h1 class="logo">
+          <a href="{{ .Site.BaseURL }}">
+            <img src="/images/blog-logo.jpg" alt="{{ .Site.Title }}">
+          </a>
+        </h1>
+        {{ with .Site.Params.Description }}
+        <span class="description">
+          {{ . | markdownify}}
+        </span>
+        {{ end }}
+    </header>
+
+    <main>
+      <div class="l-container">
+        <div class="mrow">
+        <div class="mcol c8">
+          {{ block "main" . }}{{ end }}
+        </div>
+        <div class="mcol c4">
+          <aside class="l-sidebar">
+            {{ partial "author.html" . }}
+            {{ partial "latests.html" . }}
+            {{ partial "categories.html" . }}
+            {{ partial "tags.html" . }}
+            {{ partial "information.html" . }}
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="l-container">
+        <p>&copy;{{ with .Site.Copyright }}{{ . | safeHTML }}{{ else }}<span class="h-logo">&copy; {{ .Site.Title }}</span>{{ end }}</p>
+      </div>
+    </footer>
+
+    {{ if .Site.Params.EnableHighlight | default false }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    {{ end }}
+  </body>
+</html>
+

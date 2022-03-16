@@ -1,0 +1,42 @@
+baseurl = "https://blog.pocopota.com/"
+title = "PocoPotaの隠れ家"
+author = "PocoPota"
+copyright = "PocoPotaの隠れ家"
+
+theme = "hugo_theme_robust"
+
+DefaultContentLanguage = "ja"
+languageCode = "ja"
+HasCJKLanguage = true
+
+googleAnalytics = "G-T0J78SDGRN"
+disqusShortname = "XYW"
+
+[params]
+dateformat = "2006/01/02"
+socialShare = true
+# Fonts settings.
+googlefonts = "https://fonts.googleapis.com/css?family=Lobster|Lato:400,700" # Optional, Include google fonts.
+fontfamily = "Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif" # Optional, Override body font family.
+logofontfamily = "Lobster, cursive" # Optional, Override logo font.
+
+enableHighlight = true # highlight.js option
+
+[taxonomies]
+tag = "tags"
+category = "categories"
+archive = "archives"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[params.author]
+thumbnail = "images/pocopota-icon.jpg"
+name = "PocoPota"
+description = "<p>Webデベロッパー的なことをして過ごしている人です。このブログではプログラム関係の事を主に書いています。</p>"
+portfolio = "https://pocopota.com"
+twitter = "https://twitter.com/PocoPota_io"
+github = "https://github.com/PocoPota"
+
+[outputs]
+page = [ "HTML", "AMP" ] # if you want AMP enable.
