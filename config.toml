@@ -39,4 +39,4 @@ twitter = "https://twitter.com/PocoPota_io"
 github = "https://github.com/PocoPota"
 
 [outputs]
-page = [ "HTML", "AMP" ] # if you want AMP enable.
+page = [ "HTML" ] # if you want AMP enable.
