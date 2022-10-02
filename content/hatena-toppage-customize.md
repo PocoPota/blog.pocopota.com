@@ -5,6 +5,9 @@ date = "2021-06-20T22:31:50+09:00"
 tags = ["はてなブログカスタマイズ","css","javascript","html","ブログ運営"]
 thumbnail = "/images/content/20210620223015.png"
 +++
+<script>
+    location.href = "https://hatena.pocopota.com/hatena-toppage-customize";
+</script>
 <p>はてなブログの初期のトップページって一番最近書いた記事の全文が表示されてると思います。<br />
 ですがこれだとせっかくブログを訪れてくれた人が記事の一覧を見ることができずにやりづらいですよね。<br />
 なので今回ははてなブログのトップページを一覧表示にしたり、自分の思い通りのデザインにできるようなカスタマイズの方法を説明していきたいと思います。<br />

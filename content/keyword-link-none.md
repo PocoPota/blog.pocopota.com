@@ -6,6 +6,10 @@ tags = ["はてなブログカスタマイズ","プログラミング","css"]
 thumbnail = "/images/content/20210103184656.png"
 +++
 
+<script>
+    location.href = "https://hatena.pocopota.com/keyword-link-none";
+</script>
+
 <h2>キーワードリンクとは</h2>
 
 
