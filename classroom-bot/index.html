@@ -53,12 +53,8 @@ function send(arr) {
     var timeMin = (&#39;00&#39; + timeMin).slice(-2);
     var userId = target[&#39;creatorUserId&#39;]; // 投稿者ID
     // 投稿者IDから名前を指定
-    switch (userId) {
-      case &#39;USER_ID&#39;: // ユーザーIDを入力
-        var userName = &#39;USER_NAME&#39;; // ユーザー名を入力
-      default:
-        var userName = &#39;未設定のユーザー&#39;;
-    }
+    var creatorProfile = Classroom.UserProfiles.get(userId);
+    var userName = creatorProfile.name.fullName;
 
     // Discordへの送信プログラム
     var WEBHOOK_URL = &#39;DISCORD_WEBHOOK_URL&#39;; // Discord webhook urlを入力
@@ -138,13 +134,14 @@ function main() {
     send(sendArr);
   }
 }
-</code></pre><p>github : <a href=https://github.com/PocoPota/classroom-bot><a href=https://github.com/PocoPota/classroom-bot>https://github.com/PocoPota/classroom-bot</a></a></p><h2 id=使い方>使い方</h2><h3 id=gas>GAS</h3><p>GASでのDiscord botの作り方はネット上に沢山転がっていると思うので大まかにしか説明しません。ググれ！<br>まずはGASプロジェクトを作成してください。<br>そうしたら「サービス」の部分から「Google Classroom API」を選択して追加してください。</p><p>で、上のコードをコピペ！</p><h3 id=ユーザーidの特定>ユーザーIDの特定</h3><p>Classroom APIの仕様上ユーザー名の取得ができません。その代わりユーザーIDという20桁程度の数字の配列が与えられます。<br>以下のコードを追加してdev()を実行し、出力されたログと実際のClassroomとを見比べながらどのIDが誰かを特定していきます。</p><p>クラス一覧の場合はownerIdが、投稿の場合はcreatorUserIdがユーザーを識別するIDとなっています。<br>まぁ良い感じに特定してください。</p><pre tabindex=0><code>function dev(){
+</code></pre><p>github : <a href=https://github.com/PocoPota/classroom-bot><a href=https://github.com/PocoPota/classroom-bot>https://github.com/PocoPota/classroom-bot</a></a></p><h2 id=使い方>使い方</h2><h3 id=gas>GAS</h3><p>GASでのDiscord botの作り方はネット上に沢山転がっていると思うので大まかにしか説明しません。ググれ！<br>まずはGASプロジェクトを作成してください。<br>そうしたら「サービス」の部分から「Google Classroom API」を選択して追加してください。</p><p>で、上のコードをコピペ！</p><h3 id=ユーザーidの特定>ユーザーIDの特定</h3><p>~~Classroom APIの仕様上ユーザー名の取得ができません。その代わりユーザーIDという20桁程度の数字の配列が与えられます。<br>以下のコードを追加してdev()を実行し、出力されたログと実際のClassroomとを見比べながらどのIDが誰かを特定していきます。 ~~</p><p><del>クラス一覧の場合はownerIdが、投稿の場合はcreatorUserIdがユーザーを識別するIDとなっています。<br>まぁ良い感じに特定してください。</del></p><pre tabindex=0><code>function dev(){
   console.log(getClasses());
   for(var i = 0; i &lt;= getClasses().length - 1; i++){
     console.log(getClassPost(getClasses()[i][&#39;classId&#39;]));
   }
 }
-</code></pre><p>特定したらsend関数内のswitch文で表示ユーザー名とIDを追加・変更していってください。</p><h3 id=discord-webhook>Discord webhook</h3><p>Discordでbotのwebhookを発行して、上のコード58行目付近に貼り付ける場所があるのでコピペしてください。</p><h3 id=gas-トリガーの設定>GAS トリガーの設定</h3><p>トリガーは以下の通りに設定します。</p><ul><li>main関数を実行</li><li>時間主導型</li><li>分ベースのタイマー</li><li>5分おき</li></ul><h2 id=完成>完成</h2><p>これで5分ごとに実行されて新規投稿があればDiscordに通知されるbotが完成しました。<br>ぜひDiscordとClassroomを連携させて使ってみてください！</p><h2 id=ps>P.S.</h2><p>コード自体の説明はだいぶ省きましたので疑問点などがあればDiscordかTwitterで受け付けますよ。</p><ul><li>Discord : PocoPota#2788</li><li>Twitter : <a href=https://twitter.com/PocoPota_io target=_blank>@PocoPota_io</a></li></ul><p>またsend関数の部分をいじればDiscord以外のLINE等でもbotを作ることができると思います。</p><p>github : <a href=https://github.com/PocoPota/classroom-bot><a href=https://github.com/PocoPota/classroom-bot>https://github.com/PocoPota/classroom-bot</a></a></p></div><footer class=article-footer><aside class=share><a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fblog.pocopota.com%2fclassroom-bot%2f&title=Classroom%e3%81%ae%e6%8a%95%e7%a8%bf%e9%80%9a%e7%9f%a5%e3%82%92%e3%81%97%e3%81%a6%e3%81%8f%e3%82%8c%e3%82%8bDiscord%20bot%e3%82%92%e4%bd%9c%e3%82%8b" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
+</code></pre><p><del>特定したらsend関数内のswitch文で表示ユーザー名とIDを追加・変更していってください。</del></p><p>過去の自分は何を言っているのでしょうか。Classroom APIでユーザー名は取得できます。
+コードは変更しましたのでこのセクションは無視してください。（2023.02.27追記）</p><h3 id=discord-webhook>Discord webhook</h3><p>Discordでbotのwebhookを発行して、上のコード58行目付近に貼り付ける場所があるのでコピペしてください。</p><h3 id=gas-トリガーの設定>GAS トリガーの設定</h3><p>トリガーは以下の通りに設定します。</p><ul><li>main関数を実行</li><li>時間主導型</li><li>分ベースのタイマー</li><li>5分おき</li></ul><h2 id=完成>完成</h2><p>これで5分ごとに実行されて新規投稿があればDiscordに通知されるbotが完成しました。<br>ぜひDiscordとClassroomを連携させて使ってみてください！</p><h2 id=ps>P.S.</h2><p>コード自体の説明はだいぶ省きましたので疑問点などがあればDiscordかTwitterで受け付けますよ。</p><ul><li>Discord : PocoPota#2788</li><li>Twitter : <a href=https://twitter.com/PocoPota_io target=_blank>@PocoPota_io</a></li></ul><p>またsend関数の部分をいじればDiscord以外のLINE等でもbotを作ることができると思います。</p><p>github : <a href=https://github.com/PocoPota/classroom-bot><a href=https://github.com/PocoPota/classroom-bot>https://github.com/PocoPota/classroom-bot</a></a></p></div><footer class=article-footer><aside class=share><a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fblog.pocopota.com%2fclassroom-bot%2f&title=Classroom%e3%81%ae%e6%8a%95%e7%a8%bf%e9%80%9a%e7%9f%a5%e3%82%92%e3%81%97%e3%81%a6%e3%81%8f%e3%82%8c%e3%82%8bDiscord%20bot%e3%82%92%e4%bd%9c%e3%82%8b" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
 <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fblog.pocopota.com%2fclassroom-bot%2f&text=Classroom%e3%81%ae%e6%8a%95%e7%a8%bf%e9%80%9a%e7%9f%a5%e3%82%92%e3%81%97%e3%81%a6%e3%81%8f%e3%82%8c%e3%82%8bDiscord%20bot%e3%82%92%e4%bd%9c%e3%82%8b&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
 <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fblog.pocopota.com%2fclassroom-bot%2f&t=Classroom%e3%81%ae%e6%8a%95%e7%a8%bf%e9%80%9a%e7%9f%a5%e3%82%92%e3%81%97%e3%81%a6%e3%81%8f%e3%82%8c%e3%82%8bDiscord%20bot%e3%82%92%e4%bd%9c%e3%82%8b" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
 <a href="https://getpocket.com/edit?url=https%3a%2f%2fblog.pocopota.com%2fclassroom-bot%2f&title=Classroom%e3%81%ae%e6%8a%95%e7%a8%bf%e9%80%9a%e7%9f%a5%e3%82%92%e3%81%97%e3%81%a6%e3%81%8f%e3%82%8c%e3%82%8bDiscord%20bot%e3%82%92%e4%bd%9c%e3%82%8b" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
