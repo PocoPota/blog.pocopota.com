@@ -134,7 +134,8 @@ function main() {
     send(sendArr);
   }
 }
-</code></pre><p>github : <a href=https://github.com/PocoPota/classroom-bot><a href=https://github.com/PocoPota/classroom-bot>https://github.com/PocoPota/classroom-bot</a></a></p><h2 id=使い方>使い方</h2><h3 id=gas>GAS</h3><p>GASでのDiscord botの作り方はネット上に沢山転がっていると思うので大まかにしか説明しません。ググれ！<br>まずはGASプロジェクトを作成してください。<br>そうしたら「サービス」の部分から「Google Classroom API」を選択して追加してください。</p><p>で、上のコードをコピペ！</p><h3 id=ユーザーidの特定>ユーザーIDの特定</h3><p>~~Classroom APIの仕様上ユーザー名の取得ができません。その代わりユーザーIDという20桁程度の数字の配列が与えられます。<br>以下のコードを追加してdev()を実行し、出力されたログと実際のClassroomとを見比べながらどのIDが誰かを特定していきます。 ~~</p><p><del>クラス一覧の場合はownerIdが、投稿の場合はcreatorUserIdがユーザーを識別するIDとなっています。<br>まぁ良い感じに特定してください。</del></p><pre tabindex=0><code>function dev(){
+</code></pre><p>github : <a href=https://github.com/PocoPota/classroom-bot><a href=https://github.com/PocoPota/classroom-bot>https://github.com/PocoPota/classroom-bot</a></a></p><h2 id=使い方>使い方</h2><h3 id=gas>GAS</h3><p>GASでのDiscord botの作り方はネット上に沢山転がっていると思うので大まかにしか説明しません。ググれ！<br>まずはGASプロジェクトを作成してください。<br>そうしたら「サービス」の部分から「Google Classroom API」を選択して追加してください。</p><p>で、上のコードをコピペ！</p><h3 id=ユーザーidの特定>ユーザーIDの特定</h3><p><del>Classroom APIの仕様上ユーザー名の取得ができません。その代わりユーザーIDという20桁程度の数字の配列が与えられます。</del>
+<del>以下のコードを追加してdev()を実行し、出力されたログと実際のClassroomとを見比べながらどのIDが誰かを特定していきます。</del></p><p><del>クラス一覧の場合はownerIdが、投稿の場合はcreatorUserIdがユーザーを識別するIDとなっています。<br>まぁ良い感じに特定してください。</del></p><pre tabindex=0><code>function dev(){
   console.log(getClasses());
   for(var i = 0; i &lt;= getClasses().length - 1; i++){
     console.log(getClassPost(getClasses()[i][&#39;classId&#39;]));
