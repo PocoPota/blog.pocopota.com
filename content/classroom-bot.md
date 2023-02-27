@@ -87,12 +87,8 @@ function send(arr) {
     var timeMin = ('00' + timeMin).slice(-2);
     var userId = target['creatorUserId']; // 投稿者ID
     // 投稿者IDから名前を指定
-    switch (userId) {
-      case 'USER_ID': // ユーザーIDを入力
-        var userName = 'USER_NAME'; // ユーザー名を入力
-      default:
-        var userName = '未設定のユーザー';
-    }
+    var creatorProfile = Classroom.UserProfiles.get(userId);
+    var userName = creatorProfile.name.fullName;
 
     // Discordへの送信プログラム
     var WEBHOOK_URL = 'DISCORD_WEBHOOK_URL'; // Discord webhook urlを入力
@@ -184,11 +180,11 @@ GASでのDiscord botの作り方はネット上に沢山転がっていると思
 で、上のコードをコピペ！
 
 ### ユーザーIDの特定
-Classroom APIの仕様上ユーザー名の取得ができません。その代わりユーザーIDという20桁程度の数字の配列が与えられます。  
-以下のコードを追加してdev()を実行し、出力されたログと実際のClassroomとを見比べながらどのIDが誰かを特定していきます。  
+~~Classroom APIの仕様上ユーザー名の取得ができません。その代わりユーザーIDという20桁程度の数字の配列が与えられます。  
+以下のコードを追加してdev()を実行し、出力されたログと実際のClassroomとを見比べながらどのIDが誰かを特定していきます。  ~~
 
-クラス一覧の場合はownerIdが、投稿の場合はcreatorUserIdがユーザーを識別するIDとなっています。  
-まぁ良い感じに特定してください。
+~~クラス一覧の場合はownerIdが、投稿の場合はcreatorUserIdがユーザーを識別するIDとなっています。  
+まぁ良い感じに特定してください。~~
 ```
 function dev(){
   console.log(getClasses());
@@ -198,7 +194,10 @@ function dev(){
 }
 ```
 
-特定したらsend関数内のswitch文で表示ユーザー名とIDを追加・変更していってください。
+~~特定したらsend関数内のswitch文で表示ユーザー名とIDを追加・変更していってください。~~
+
+過去の自分は何を言っているのでしょうか。Classroom APIでユーザー名は取得できます。
+コードは変更しましたのでこのセクションは無視してください。（2023.02.27追記）
 
 ### Discord webhook
 Discordでbotのwebhookを発行して、上のコード58行目付近に貼り付ける場所があるのでコピペしてください。
