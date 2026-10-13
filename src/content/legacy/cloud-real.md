@@ -1,11 +1,8 @@
-+++
-title = "CSSでリアルな雲を作る"
-draft = false
-date = "2021-11-12T22:46:40+09:00"
-tags = ["cssアート","css","ネタ","html"]
-thumbnail = "/images/content/20211112224157.png"
-+++
-
+---
+title: "CSSでリアルな雲を作る"
+date: 2021-11-12T22:46:40+09:00
+thumbnail: /images/content/20211112224157.png
+---
 <div class="section">
     <h2>CSSでリアルな雲を作るぞ！</h2>
     <p>まずCSSだけでリアルな雲を作ろうと思って調べてみました。<br />

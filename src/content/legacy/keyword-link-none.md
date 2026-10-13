@@ -1,11 +1,8 @@
-+++
-title = "【はてなカスタマイズ】キーワードリンクを無効化する方法"
-draft = false
-date = "2021-01-03T18:49:40+09:00"
-tags = ["はてなブログカスタマイズ","プログラミング","css"]
-thumbnail = "/images/content/20210103184656.png"
-+++
-
+---
+title: "【はてなカスタマイズ】キーワードリンクを無効化する方法"
+date: 2021-01-03T18:49:40+09:00
+thumbnail: /images/content/20210103184656.png
+---
 <script>
     location.href = "https://hatena.pocopota.com/keyword-link-none";
 </script>

@@ -1,10 +1,8 @@
-+++
-title = "CSSだけでロード中のぐるぐるを作る"
-draft = false
-date = "2021-10-24T09:02:30+09:00"
-tags = ["css","開発記"]
-thumbnail = "/images/content/20211024085700.png"
-+++
+---
+title: "CSSだけでロード中のぐるぐるを作る"
+date: 2021-10-24T09:02:30+09:00
+thumbnail: /images/content/20211024085700.png
+---
 <p>今回はロードなどをしているときに出てくるあのぐるぐる（伝われ）を作っていこうと思います。</p>
 
 <div class="section">
@@ -42,7 +40,7 @@ thumbnail = "/images/content/20211024085700.png"
 <div class="section">
     <h2>作り方</h2>
     <p>1/4のborderの付いた円をつくり、それを回転させることでロード中のぐるぐるを作っています。<br />
-1/4のborder付きの円の作り方は以前の記事を参考にしてください。</p><p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fpocopota-blog.hatenablog.com%2Fentry%2F1-2-border-circle" title="CSSでborderのみの半円をつくる - PocoPotaの隠れ家" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://pocopota-blog.hatenablog.com/entry/1-2-border-circle">pocopota-blog.hatenablog.com</a></cite><br />
+1/4のborder付きの円の作り方は以前の記事を参考にしてください。</p><p><a href="/1-2-border-circle/">CSSでborderのみの半円をつくる</a><br />
 </p>
 
 <div class="section">

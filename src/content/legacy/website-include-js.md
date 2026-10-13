@@ -1,10 +1,8 @@
-+++
-title = "JavaScriptでサイトの共通化（インクルード化）をしよう！"
-draft = false
-date = "2021-12-12T11:04:30+09:00"
-tags = ["javascript","html","プログラミング"]
-thumbnail = "/images/content/20211212105750.png"
-+++
+---
+title: "JavaScriptでサイトの共通化（インクルード化）をしよう！"
+date: 2021-12-12T11:04:30+09:00
+thumbnail: /images/content/20211212105750.png
+---
 <p>今回はサイトの共通化をしていこうと思います。共通化はインクルードと言ったりもしますね。</p>
 <div class="section">
     <h2 id="サイトの共通化とは">サイトの共通化とは？</h2>

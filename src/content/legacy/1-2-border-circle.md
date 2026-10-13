@@ -1,12 +1,8 @@
-+++
-title = "CSSでborderのみの半円をつくる"
-draft = false
-date = "2021-09-03T23:33:00+09:00"
-tags = ["css","html","開発記"]
-thumbnail = "/images/content/20210903233223.png"
-+++
-
-
+---
+title: "CSSでborderのみの半円をつくる"
+date: 2021-09-03T23:33:00+09:00
+thumbnail: /images/content/20210903233223.png
+---
 <div class="section">
     <h2>borderのみの半円を作りたい！</h2>
     <p>完成形がこんな感じ↓の枠線だけがついた半円を作りたい！<br />

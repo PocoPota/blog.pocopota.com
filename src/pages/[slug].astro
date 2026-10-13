@@ -1,0 +1,59 @@
+---
+import { getCollection, render } from "astro:content";
+
+import Article from "@/components/post/Article.astro";
+import Layout from "@/layouts/Layout.astro";
+
+import type { GetStaticPaths } from "astro";
+
+export const getStaticPaths = (async () => {
+	const entries = [
+		...(await getCollection("posts")),
+		...(await getCollection("legacy")),
+	];
+	const ids = entries.map((entry) => entry.id);
+	const duplicate = ids.find((id, i) => ids.indexOf(id) !== i);
+	if (duplicate) {
+		throw new Error(`slug が posts と legacy で重複しています: ${duplicate}`);
+	}
+	return entries.map((entry) => ({
+		params: { slug: entry.id },
+		props: { entry },
+	}));
+}) satisfies GetStaticPaths;
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const body = entry.body ?? "";
+---
+
+<Layout
+	title={entry.data.title}
+	description={entry.data.description}
+	ogImage={entry.data.thumbnail}
+	ogType="article"
+>
+	{body.includes('class="fa') && (
+		<link
+			slot="head"
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+			crossorigin="anonymous"
+		/>
+	)}
+	{body.includes("twitter-tweet") && (
+		<script
+			slot="head"
+			is:inline
+			async
+			src="https://platform.twitter.com/widgets.js"
+		/>
+	)}
+	<Article
+		title={entry.data.title}
+		date={entry.data.date}
+		legacy={entry.collection === "legacy"}
+	>
+		<Content />
+	</Article>
+</Layout>

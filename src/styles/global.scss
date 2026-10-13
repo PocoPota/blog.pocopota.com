@@ -1,0 +1,63 @@
+@use "variables";
+
+html {
+	scroll-behavior: smooth;
+	font-size: 100%;
+
+	@media (prefers-reduced-motion: reduce) {
+		scroll-behavior: auto;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+	}
+}
+
+body {
+	font-family: var(--font-family-base);
+	font-style: normal;
+	line-height: 1.7;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+}
+
+a {
+	color: inherit;
+
+	&:hover,
+	&:focus-visible {
+		text-decoration: none;
+	}
+}
+
+:focus-visible {
+	outline: 3px solid var(--color-focus-ring);
+	outline-offset: 3px;
+}
+
+img {
+	height: auto;
+}
+
+.skip-link {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	padding: 0.5em 0.75em;
+	color: var(--color-text-inverse);
+	text-decoration: none;
+	background-color: var(--color-focus-ring);
+	transform: translateY(-100%);
+
+	&:focus {
+		transform: translateY(0);
+	}
+}

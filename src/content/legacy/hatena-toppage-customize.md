@@ -1,10 +1,8 @@
-+++
-title = "【はてなブログ無料版】トップページをカスタマイズする2種類の方法を紹介。記事一覧にしたり"
-draft = false
-date = "2021-06-20T22:31:50+09:00"
-tags = ["はてなブログカスタマイズ","css","javascript","html","ブログ運営"]
-thumbnail = "/images/content/20210620223015.png"
-+++
+---
+title: "【はてなブログ無料版】トップページをカスタマイズする2種類の方法を紹介。記事一覧にしたり"
+date: 2021-06-20T22:31:50+09:00
+thumbnail: /images/content/20210620223015.png
+---
 <script>
     location.href = "https://hatena.pocopota.com/hatena-toppage-customize";
 </script>
@@ -36,7 +34,7 @@ location.href = "/*ブログのアーカイブページのリンク*/"
 ```
 
 <p>この方法は以前記事にもしています。<br />
-<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fpocopota-blog.hatenablog.com%2Fentry%2Fhatena-redirect-archive" title="【はてなカスタマイズ】無料でもリダイレクトで記事の一覧表示する方法 - PocoPotaの隠れ家" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://pocopota-blog.hatenablog.com/entry/hatena-redirect-archive">pocopota-blog.hatenablog.com</a></cite><br />
+<a href="/hatena-redirect-archive/">【はてなカスタマイズ】無料でもリダイレクトで記事の一覧表示する方法</a><br />
 </p>
 
 </div>
@@ -55,7 +53,7 @@ location.href = "/*ブログのアーカイブページのリンク*/"
 <div class="section">
     <h3 id="作成方法-1">作成方法</h3>
     <p>まずはトップページにする記事を作成します。最近の記事を一覧表示にしたり、色々とリンクを入れたりしてカスタマイズします。</p><p>記事内に最新記事を表示させる方法は下↓の記事を参考にしてください。<br />
-<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fpocopota-blog.hatenablog.com%2Fentry%2Fmove-element-another" title="【はてなカスタマイズ】サイドバーの要素を記事内に設置する方法。要素を別の場所に移す - PocoPotaの隠れ家" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://pocopota-blog.hatenablog.com/entry/move-element-another">pocopota-blog.hatenablog.com</a></cite></p><p>トップページ用の記事が完成したら公開します。公開するときに公開日時を9999年とかにして公開してください。<br />
+<a href="/move-element-another/">【はてなカスタマイズ】サイドバーの要素を記事内に設置する方法。要素を別の場所に移す</a></p><p>トップページ用の記事が完成したら公開します。公開するときに公開日時を9999年とかにして公開してください。<br />
 公開は予約公開ではなくすぐに公開してください。</p><p>公開したら次はトップページの表示設定を行います。<br />
 設定＞詳細設定＞ブログ表示からトップページの記事数を１記事に設定してください。</p><p>設定が終わったらブログのトップページを見てみてください。きちんと表示されているはずです。</p><p>これで完成でも良いのですが、よりトップページっぽくしていきたいと思います。<br />
 ここからのカスタマイズはしても、してもしなくても大丈夫です。</p>
@@ -95,7 +93,7 @@ location.href = "/*ブログのアーカイブページのリンク*/"
     <p>はい、あともう少しです。<br />
 このままだとまだ記事一覧ページで見たときにトップページ用記事が見えてしまいます。<br />
 それでは嫌ですよね。なので下の記事を参考にして記事一覧ページから非表示にしてください。<br />
-<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fpocopota-blog.hatenablog.com%2Fentry%2Farchive-display-none" title="【はてなカスタマイズ】アーカイブページから特定の記事を非表示にする方法 - PocoPotaの隠れ家" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://pocopota-blog.hatenablog.com/entry/archive-display-none">pocopota-blog.hatenablog.com</a></cite><br />
+<a href="/archive-display-none/">【はてなカスタマイズ】アーカイブページから特定の記事を非表示にする方法</a><br />
 </p>
 
 </div>

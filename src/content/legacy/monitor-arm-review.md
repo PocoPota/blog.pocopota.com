@@ -1,11 +1,8 @@
-+++
-title = "【レビュー】デスク周りをスッキリさせたい！モニターアームをレビュー【デスク改造計画】"
-draft = false
-date = "2021-03-12T22:53:30+09:00"
-tags = ["レビュー","デスク改造計画","パソコン"]
-thumbnail = "/images/content/20210312225242.png"
-+++
-
+---
+title: "【レビュー】デスク周りをスッキリさせたい！モニターアームをレビュー【デスク改造計画】"
+date: 2021-03-12T22:53:30+09:00
+thumbnail: /images/content/20210312225242.png
+---
 <p>パソコンまわりの環境を整えたいけどお金がない、どうもPocoPotaです。<br />
 今回はモニターアームを購入したのでレビューしていきたいと思います。<br />
 今回購入したモニターアームはデュアルディスプレイ用で一番安いと言っても過言ではない3999円(投稿時)のものを買いました。<div class="affiliate-link-box"><br />
@@ -72,7 +69,7 @@ thumbnail = "/images/content/20210312225242.png"
     <h3 id="モニター裏にVESAのやつ取り付け">モニター裏にVESAのやつ取り付け</h3>
     <p>プレートとネジを使って取り付けます。この商品はデュアルモニター用なのでもちろん2セット入っています。ネジはモニターの裏が平面か曲面かで付け方が異なるようです。私が持っているのは曲面のものなのでその方法で説明します。<br />
 <span itemscope itemtype="http://schema.org/Photograph"><img src="/images/content/20210312071649.png" alt="f:id:pocopota:20210312071649p:plain" title="" class="hatena-fotolife" itemprop="image"></span></p><p>使っているモニターはこちら↓<br />
-<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fpocopota-blog.hatenablog.com%2Fentry%2Freview-benq-gw2480e" title="【レビュー】「BenQ GW2480E」をレビュー。超ベゼルレスデザインでクールなモニター。デスク改造計画 - PocoPotaの隠れ家" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://pocopota-blog.hatenablog.com/entry/review-benq-gw2480e">pocopota-blog.hatenablog.com</a></cite><br />
+<a href="/review-benq-gw2480e/">【レビュー】「BenQ GW2480E」をレビュー。超ベゼルレスデザインでクールなモニター。デスク改造計画</a><br />
 <div class="affiliate-link-box"><br />
   <a href="https://amzn.to/2XmXJTK" target="_blank"><img src="/images/content/20210108130107.png" title="GW2480E"></a><br />
   <div class="affiliate-box-information"><br />
@@ -148,7 +145,7 @@ thumbnail = "/images/content/20210312225242.png"
     <a href="https://amzn.to/2XmXJTK" target="_blank"><p class="product-name">BenQ モニター ディスプレイ GW2480E</p></a>    <p class="maker-name"><a class="keyword" href="http://d.hatena.ne.jp/keyword/BenQ">BenQ</a></p>    <div class="affiliate-link-buttons"><br />
       <div class="affiliate-button-amazon"><a href="https://amzn.to/35kOyr4" target="_blank">Amazon</a></div>      <div class="affiliate-button-rakuten"><a href="https://hb.afl.rakuten.co.jp/ichiba/1be9b869.231ed859.1be9b86a.82a9b3c9/?pc=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F663a0f96bc22b582b93047dee3b6d3e5%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MCwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjEsImFtcCI6ZmFsc2V9" target="_blank">楽天市場</a></div>      <div class="affiliate-button-yahoo"><a href="https://shopping.yahoo.co.jp/products/cfc82460c1?sc_i=shp_pc_search_itemlist_shsrg_products" target="_blank">Yahooショッピング</a></div>    </div>  </div></div><span style="font-size: 80%">※AmazonにE付モデルは販売されていないのでご注意ください。</span></p><br />
 <p>【デスク改造計画】関連記事<br />
-<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fpocopota-blog.hatenablog.com%2Fentry%2Freview-benq-gw2480e" title="【レビュー】「BenQ GW2480E」をレビュー。超ベゼルレスデザインでクールなモニター。デスク改造計画 - PocoPotaの隠れ家" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://pocopota-blog.hatenablog.com/entry/review-benq-gw2480e">pocopota-blog.hatenablog.com</a></cite></p><br />
+<a href="/review-benq-gw2480e/">【レビュー】「BenQ GW2480E」をレビュー。超ベゼルレスデザインでクールなモニター。デスク改造計画</a></p><br />
 <p>当ブログのロゴの入っていない写真はすべてAmazon商品ページより引用</p>
 
 </div>

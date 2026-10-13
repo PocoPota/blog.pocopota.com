@@ -1,0 +1,19 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="ページが見つかりません">
+	<div class="not-found">
+		<h1>404</h1>
+		<p>お探しのページは見つかりませんでした。</p>
+		<a href="/">トップページへ戻る</a>
+	</div>
+</Layout>
+
+<style>
+	.not-found {
+		max-width: var(--content-width);
+		padding: 0 1rem;
+		margin: 0 auto;
+	}
+</style>

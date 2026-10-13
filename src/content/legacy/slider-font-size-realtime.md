@@ -1,11 +1,8 @@
-+++
-title = "【jQuery】input要素のスライダーを動かして文字サイズをリアルタイムに変更する方法"
-draft = false
-date = "2021-03-24T14:29:50+09:00"
-tags = ["プログラミング","javascript","jQuery","html","開発記"]
-thumbnail = "/images/content/20210324142128.png"
-+++
-
+---
+title: "【jQuery】input要素のスライダーを動かして文字サイズをリアルタイムに変更する方法"
+date: 2021-03-24T14:29:50+09:00
+thumbnail: /images/content/20210324142128.png
+---
 <p></p><p>今回は<a class="keyword" href="http://d.hatena.ne.jp/keyword/Web%A5%B5%A1%BC%A5%D3%A5%B9">Webサービス</a>を開発している途中に作ったHTMLのinput、range要素を使って文字のサイズを変更するものを紹介していきたいと思います。一旦デモをどうぞ。</p>
 <p id="p">ここの文字のサイズが変わります。</p>
 <input type="range" min="0" max="100" step="1" id="slider" value="10">

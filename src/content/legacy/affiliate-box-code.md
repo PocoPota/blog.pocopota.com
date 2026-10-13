@@ -1,11 +1,8 @@
-+++
-title = "【コピペ可能】「カエレバ」、「Rinker」のようなアフィリエイト用商品リンクボックスを作ろう！【はてなカスタマイズ】"
-draft = false
-date = "2021-01-08T14:05:40+09:00"
-tags = ["はてなブログカスタマイズ","ブログ運営","プログラミング","html","css"]
-thumbnail = "/images/content/20210108140335.png"
-+++
-
+---
+title: "【コピペ可能】「カエレバ」、「Rinker」のようなアフィリエイト用商品リンクボックスを作ろう！【はてなカスタマイズ】"
+date: 2021-01-08T14:05:40+09:00
+thumbnail: /images/content/20210108140335.png
+---
 <p><p>4月25日更新：レスポンシブデザインに対応させました！</p><p>アフィリエイトブログを運営する場合にほぼ必須となるものが、商品リンクを貼るボックス的なものですよね。言葉じゃわからないので、実際のものを。 <br />
 下の画像は「rinker」というWordPress用の商品リンク管理プラグインを使って使ったものです。（rinker公式のページから引用）</p><p><img src="/images/content/20210108131158.png" alt="f:id:pocopota:20210108131158p:plain" title="" class="hatena-fotolife" itemprop="image" /></p><p>こんなものを作りたいと思います。 <br />で、出来上がったものが、これ。↓</p><div class="affiliate-link-box"><a target="_blank"><img src="https://m.media-amazon.com/images/I/41M2oGkWAnL._SL160_.jpg" title="テスト画像" /></a><br />
 <div class="affiliate-box-information"><br />

@@ -1,0 +1,35 @@
+---
+import FormattedDate from "@/components/common/FormattedDate.astro";
+
+import styles from "./PostList.module.scss";
+
+import type { Page } from "astro";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+	page: Page<CollectionEntry<"posts">>;
+}
+
+const { page } = Astro.props;
+---
+
+<h1 class={styles.heading}>記事一覧</h1>
+<ul class={styles.list}>
+	{page.data.map((post) => (
+		<li>
+			<a class={styles.item} href={`/${post.id}/`}>
+				<FormattedDate date={post.data.date} />
+				<span class={styles.title}>{post.data.title}</span>
+			</a>
+		</li>
+	))}
+</ul>
+{page.lastPage > 1 && (
+	<nav class={styles.pagination} aria-label="ページ送り">
+		{page.url.prev && <a href={page.url.prev}>新しい記事</a>}
+		<span>
+			{page.currentPage} / {page.lastPage}
+		</span>
+		{page.url.next && <a href={page.url.next}>古い記事</a>}
+	</nav>
+)}

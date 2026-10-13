@@ -1,11 +1,8 @@
-+++
-title = "【レビュー】デザイン最強のゲーミングマウスパッド、PureTrak  Talent Blackをレビュー！"
-draft = false
-date = "2021-04-29T12:37:50+09:00"
-tags = ["レビュー","デスク改造計画"]
-thumbnail = "/images/content/20210429123725.png"
-+++
-
+---
+title: "【レビュー】デザイン最強のゲーミングマウスパッド、PureTrak  Talent Blackをレビュー！"
+date: 2021-04-29T12:37:50+09:00
+thumbnail: /images/content/20210429123725.png
+---
 <p>静かに始まったデスク改造計画も第3段。今回はマウスパッドを紹介したいと思います。<br />
 同時期にキーボードとワイヤレスイヤホンも買ったので後日紹介したいと思います！</p><p>今回紹介するマウスパッドはPureTrakというメーカーのTalent Blackというものを購入しました。<br />
 このメーカー、商品名はあまり聞き馴染みのない方が多いと思います。Pure Trakというメーカーはアメリカの企業で日本ではあまりお目にかかれません。<br />
@@ -67,7 +64,7 @@ thumbnail = "/images/content/20210429123725.png"
     <a href="https://www.fumo-shop.com/puretrak-gaming-mousepads-talent-black.html" target="_blank"><p class="product-name">PureTrak gaming mousepads Talent Black</p></a>    <p class="maker-name">PureTrak正規代理店：ふもっふのおみせ</p>    <div class="affiliate-link-buttons"><br />
       <div class="affiliate-button-amazon" style="background-color:#da70d6;"><a href="https://www.fumo-shop.com/puretrak-gaming-mousepads-talent-black.html" target="_blank">ふもっふのおみせ</a></div>    </div>  </div></div></p><br />
 <p>デスク改造計画の記事<br />
-<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fpocopota-blog.hatenablog.com%2Fentry%2Fmonitor-arm-review" title="【レビュー】デスク周りをスッキリさせたい！モニターアームをレビュー【デスク改造計画】 - PocoPotaの隠れ家" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://pocopota-blog.hatenablog.com/entry/monitor-arm-review">pocopota-blog.hatenablog.com</a></cite><br />
-<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fpocopota-blog.hatenablog.com%2Fentry%2Freview-benq-gw2480e" title="【レビュー】「BenQ GW2480E」をレビュー　超ベゼルレスデザインでクールなモニター　デスク改造計画 - PocoPotaの隠れ家" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://pocopota-blog.hatenablog.com/entry/review-benq-gw2480e">pocopota-blog.hatenablog.com</a></cite></p>
+<a href="/monitor-arm-review/">【レビュー】デスク周りをスッキリさせたい！モニターアームをレビュー【デスク改造計画】</a><br />
+<a href="/review-benq-gw2480e/">【レビュー】「BenQ GW2480E」をレビュー　超ベゼルレスデザインでクールなモニター　デスク改造計画</a></p>
 
 </div>

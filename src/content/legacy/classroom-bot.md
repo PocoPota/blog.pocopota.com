@@ -1,11 +1,8 @@
-+++
-draft = false
-thumbnail = "images/content/classroombot-samune.png"
-tags = ['開発記','javascript','プログラミング']
-date = "2022-04-30T23:45:47+09:00"
-title = "Classroomの投稿通知をしてくれるDiscord botを作る"
-description = ""
-+++
+---
+title: "Classroomの投稿通知をしてくれるDiscord botを作る"
+date: 2022-04-30T23:45:47+09:00
+thumbnail: /images/content/classroombot-samune.png
+---
 今回は不便な事をプログラムで解決していこうの回です。
 
 現在学校でのお知らせなどの連絡でGoogle Classroomというサービスを使っています。  

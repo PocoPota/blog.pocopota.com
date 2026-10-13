@@ -1,11 +1,8 @@
-+++
-title = "【レビュー】「BenQ GW2480E」をレビュー　超ベゼルレスデザインでクールなモニター　デスク改造計画"
-draft = false
-date = "2021-01-08T20:37:00+09:00"
-tags = ["レビュー","デスク改造計画","パソコン"]
-thumbnail = "/images/content/20210108082157.png"
-+++
-
+---
+title: "【レビュー】「BenQ GW2480E」をレビュー　超ベゼルレスデザインでクールなモニター　デスク改造計画"
+date: 2021-01-08T20:37:00+09:00
+thumbnail: /images/content/20210108082157.png
+---
 <p>今回はパソコン環境を良くするために、前々から企てていたデュアルディスプレイ化を実行するためにBenQの「GW2480E」を購入したので色々とレビューしていきたいと思います。</p><p><div class="affiliate-link-box"><br />
   <a href="https://amzn.to/2XmXJTK" target="_blank"><img src="/images/content/20210108130107.png" title="GW2480E"></a><br />
   <div class="affiliate-box-information"><br />

@@ -1,10 +1,8 @@
-+++
-title = "家のLANが遅い！！原因の「まとめてネット」を安価でカスタマイズ！"
-draft = false
-date = "2022-02-12T22:11:30+09:00"
-tags = ["ネットワーク","ガジェット"]
-thumbnail = "/images/content/20220212220641.png"
-+++
+---
+title: "家のLANが遅い！！原因の「まとめてネット」を安価でカスタマイズ！"
+date: 2022-02-12T22:11:30+09:00
+thumbnail: /images/content/20220212220641.png
+---
 <div class="section">
     <h2>うちのLANの速度遅くね？</h2>
     <p><span itemscope itemtype="http://schema.org/Photograph"><img src="/images/content/20220212161205.png" alt="f:id:pocopota:20220212161205p:plain" width="795" height="744" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span><br />

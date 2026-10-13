@@ -1,10 +1,8 @@
-+++
-title = "【はてなカスタマイズ】サイドバーの要素を記事内に設置する方法。要素を別の場所に移す"
-draft = false
-date = "2021-01-31T10:12:00+09:00"
-tags = ["はてなブログカスタマイズ","css","html","javascript","ブログ運営","プログラミング"]
-thumbnail = "/images/content/20210131100951.png"
-+++
+---
+title: "【はてなカスタマイズ】サイドバーの要素を記事内に設置する方法。要素を別の場所に移す"
+date: 2021-01-31T10:12:00+09:00
+thumbnail: /images/content/20210131100951.png
+---
 <script>
     location.href = "https://hatena.pocopota.com/move-element-another";
 </script>

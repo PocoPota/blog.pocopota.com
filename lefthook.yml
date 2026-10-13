@@ -1,0 +1,14 @@
+pre-commit:
+  commands:
+    prettier:
+      glob: "**/*.{js,ts,jsx,tsx,mjs,cjs,astro,json,css,scss,md,yml,yaml}"
+      run: bunx prettier --write {staged_files}
+      stage_fixed: true
+
+pre-push:
+  commands:
+    protect-main:
+      interactive: true
+      run: bun scripts/confirm-push.ts
+    ci:
+      run: bun run ci

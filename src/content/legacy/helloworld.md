@@ -1,10 +1,8 @@
-+++
-title = "Hello world!"
-draft = false
-date = "2021-01-03T15:00:57+09:00"
-thumbnail = "https://cdn.user.blog.st-hatena.com/default_entry_og_image/157930005/161008362273954"
-+++
-
+---
+title: "Hello world!"
+date: 2021-01-03T15:00:57+09:00
+thumbnail: /images/default.jpg
+---
 <p><span style="font-size: 200%;"><strong>Hello world！</strong></span></p>
 <p>はい、みなさんこんにちは。PocoPotaです。</p>
 <p>スマホの情報や買ったガジェットなどのレビューを発信したり、はてなブログのカスタマイズ関連のことなどの自分用の備忘録的な感じで使用したいとこの度、ブログを立ち上げました。</p>

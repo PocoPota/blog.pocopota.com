@@ -1,0 +1,21 @@
+---
+import PostList from "@/components/home/PostList.astro";
+import { SITE_DESCRIPTION } from "@/consts";
+import Layout from "@/layouts/Layout.astro";
+import { getSortedPosts } from "@/lib/posts";
+
+import type { GetStaticPaths } from "astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+	return paginate(await getSortedPosts(), { pageSize: 10 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<Layout
+	title={page.currentPage === 1 ? undefined : `${page.currentPage}ページ目`}
+	description={SITE_DESCRIPTION}
+>
+	<PostList page={page} />
+</Layout>

@@ -1,10 +1,8 @@
-+++
-title = "【はてなカスタマイズ】アーカイブページから特定の記事を非表示にする方法"
-draft = false
-date = "2021-01-17T11:35:20+09:00"
-tags = ["はてなブログカスタマイズ","プログラミング","css"]
-thumbnail = "/images/content/20210117113251.png"
-+++
+---
+title: "【はてなカスタマイズ】アーカイブページから特定の記事を非表示にする方法"
+date: 2021-01-17T11:35:20+09:00
+thumbnail: /images/content/20210117113251.png
+---
 <script>
     location.href = "https://hatena.pocopota.com/archive-display-none";
 </script>

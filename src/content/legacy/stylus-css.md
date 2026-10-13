@@ -1,11 +1,8 @@
-+++
-title = "【Chrome拡張機能】Stylusを使って自分で書いたCSSを常時反映させる！"
-draft = false
-date = "2021-06-25T07:18:40+09:00"
-tags = ["css"]
-thumbnail = "/images/content/20210625071639.png"
-+++
-
+---
+title: "【Chrome拡張機能】Stylusを使って自分で書いたCSSを常時反映させる！"
+date: 2021-06-25T07:18:40+09:00
+thumbnail: /images/content/20210625071639.png
+---
 <div class="section">
     <h2>CSSを保存できるStylus</h2>
     <p>「このサイトの使い勝手悪い！」と思ったことはありませんか？<br />

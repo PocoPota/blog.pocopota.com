@@ -1,11 +1,8 @@
-+++
-title = "【JavaScript】if文とfor文だけで素因数分解"
-draft = false
-date = "2021-10-23T22:49:20+09:00"
-tags = ["プログラミング","数学","javascript"]
-thumbnail = "/images/content/20211023224829.png"
-+++
-
+---
+title: "【JavaScript】if文とfor文だけで素因数分解"
+date: 2021-10-23T22:49:20+09:00
+thumbnail: /images/content/20211023224829.png
+---
 <p>唐突に「素因数分解」がしたいと思ったのでプログラムで作ってみようと思います。<br />
 少しググってみると何やらいろんな関数が使われていて難しそうでした。<br />
 ですが今回はif文とfor文だけで素因数分解をしていこうと思います。（良いか悪いかは別として）</p>
