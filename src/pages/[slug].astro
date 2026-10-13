@@ -22,7 +22,7 @@ const body = entry.body ?? "";
 <Layout
 	title={entry.data.title}
 	description={entry.data.description}
-	ogImage={entry.data.thumbnail}
+	ogImage={entry.data.thumbnail ?? `/og/${entry.id}.png`}
 	ogType="article"
 >
 	{body.includes('class="fa') && (
