@@ -1,6 +1,6 @@
 # blog.pocopota.com
 
-PocoPota のブログ。Astro で生成し、GitHub Pages から配信する。`master` に push すると `.github/workflows/deploy.yml` がビルドしてデプロイする。
+PocoPota のブログ。Astro で生成し、GitHub Pages から配信する。`main` に push すると `.github/workflows/deploy.yml` がビルドしてデプロイする。
 
 ## セットアップ
 
