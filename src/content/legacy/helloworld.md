@@ -1,7 +1,6 @@
 ---
 title: "Hello world!"
 date: 2021-01-03T15:00:57+09:00
-thumbnail: /images/default.jpg
 ---
 <p><span style="font-size: 200%;"><strong>Hello world！</strong></span></p>
 <p>はい、みなさんこんにちは。PocoPotaです。</p>
