@@ -1,0 +1,331 @@
+.article {
+	max-width: calc(var(--content-width) + 2.5rem);
+	padding: 0 1.25rem;
+	margin: 0 auto;
+}
+
+.header {
+	padding-bottom: 2rem;
+	margin-bottom: 2.5rem;
+	font-size: 0.8125rem;
+	font-variant-numeric: tabular-nums;
+	color: var(--color-text-light);
+	letter-spacing: 0.08em;
+	border-bottom: 1px solid var(--color-border);
+}
+
+.title {
+	margin-bottom: 1rem;
+	font-family: var(--font-family-heading);
+	font-size: 1.875rem;
+	font-weight: 600;
+	font-feature-settings: "palt";
+	line-height: 1.5;
+	color: var(--color-text);
+	letter-spacing: 0.05em;
+
+	@media (max-width: 600px) {
+		font-size: 1.5rem;
+	}
+}
+
+// 本文は Markdown から生成されるため、要素セレクタで装飾する
+.body {
+	overflow-wrap: anywhere;
+
+	:global {
+		h2,
+		h3,
+		h4,
+		h5 {
+			font-family: var(--font-family-heading);
+			font-weight: 600;
+			font-feature-settings: "palt";
+			line-height: 1.6;
+			letter-spacing: 0.05em;
+		}
+
+		h2 {
+			padding-bottom: 0.5rem;
+			margin: 3.5rem 0 1.5rem;
+			font-size: 1.375rem;
+			border-bottom: 1px solid var(--color-border);
+		}
+
+		h3 {
+			margin: 2.75rem 0 1rem;
+			font-size: 1.1875rem;
+		}
+
+		h4,
+		h5 {
+			margin: 2rem 0 0.75rem;
+			font-size: 1.0625rem;
+		}
+
+		p,
+		ul,
+		ol,
+		pre,
+		blockquote,
+		table,
+		figure {
+			margin: 0 0 1.5rem;
+		}
+
+		ul,
+		ol {
+			padding-left: 1.5rem;
+		}
+
+		ul {
+			list-style: disc;
+		}
+
+		ol {
+			list-style: decimal;
+		}
+
+		li + li {
+			margin-top: 0.25rem;
+		}
+
+		li::marker {
+			color: var(--color-text-light);
+		}
+
+		a {
+			color: var(--color-primary);
+
+			&:hover,
+			&:focus-visible {
+				color: var(--color-primary-dark);
+			}
+		}
+
+		strong {
+			font-weight: 700;
+		}
+
+		img,
+		iframe,
+		video {
+			max-width: 100%;
+		}
+
+		img {
+			border-radius: var(--radius-sm);
+		}
+
+		figure {
+			text-align: center;
+		}
+
+		figcaption {
+			margin-top: 0.5rem;
+			font-size: 0.8125rem;
+			color: var(--color-text-light);
+		}
+
+		blockquote {
+			padding: 0.25rem 0 0.25rem 1.25rem;
+			color: var(--color-text-light);
+			border-left: 2px solid var(--color-border);
+		}
+
+		code {
+			font-family: var(--font-family-mono);
+			font-size: 0.875em;
+			letter-spacing: 0;
+		}
+
+		:not(pre) > code {
+			padding: 0.15em 0.4em;
+			background-color: var(--color-bg-sub);
+			border-radius: var(--radius-sm);
+		}
+
+		pre {
+			padding: 1.25rem;
+			overflow-x: auto;
+			font-size: 0.9375rem;
+			line-height: 1.7;
+			border: 1px solid var(--color-border);
+			border-radius: var(--radius-md);
+		}
+
+		table {
+			display: block;
+			overflow-x: auto;
+			font-size: 0.9375rem;
+			border-collapse: collapse;
+		}
+
+		th,
+		td {
+			padding: 0.5rem 0.875rem;
+			border: 1px solid var(--color-border);
+		}
+
+		th {
+			font-weight: 500;
+			background-color: var(--color-bg-sub);
+		}
+
+		hr {
+			width: 4rem;
+			margin: 3rem auto;
+			border: none;
+			border-top: 1px solid var(--color-border);
+		}
+
+		.footnotes {
+			padding-top: 1.5rem;
+			margin-top: 3.5rem;
+			font-size: 0.875rem;
+			color: var(--color-text-light);
+			border-top: 1px solid var(--color-border);
+		}
+	}
+}
+
+// 旧記事の本文が使っているクラス。旧サイトの custom.scss から移した
+// 旧記事の見た目を保つため、旧サイトの文字サイズをそのまま使う
+/* stylelint-disable a11y/font-size-is-readable */
+.legacy :global {
+	.affiliate-link-box {
+		display: flex;
+		border: 1px solid #dadada;
+
+		a {
+			text-decoration: none;
+		}
+
+		img {
+			width: 160px;
+			height: 160px;
+			margin: 10px 25px;
+		}
+
+		@media (max-width: 750px) {
+			flex-direction: column;
+			width: 95%;
+			margin: 0;
+
+			img {
+				width: 80%;
+				height: auto;
+				margin: auto;
+			}
+		}
+	}
+
+	.affiliate-box-information {
+		margin-right: 10px;
+
+		@media (max-width: 750px) {
+			width: 100%;
+			margin: 0;
+		}
+	}
+
+	.product-name {
+		margin-bottom: 0;
+		font-size: 20px;
+		color: #000;
+
+		@media (max-width: 750px) {
+			margin: auto 5px;
+			line-height: 22px;
+		}
+	}
+
+	.maker-name {
+		margin-top: 3px;
+		font-size: 11px;
+		color: #808080;
+
+		@media (max-width: 750px) {
+			margin: auto 5px;
+		}
+	}
+
+	.affiliate-link-buttons {
+		display: flex;
+		margin-top: 15px;
+		margin-left: 5px;
+
+		div {
+			padding: 3px 10px;
+			margin-right: 10px;
+			font-size: 13px;
+			border-radius: 3px;
+			box-shadow: 1px 1px 5px #a7a7a7;
+		}
+
+		a {
+			color: #fff;
+		}
+
+		@media (max-width: 750px) {
+			flex-direction: column;
+			margin: 0 0 8px;
+
+			div {
+				width: 83%;
+				margin: 5px auto;
+			}
+		}
+	}
+
+	.affiliate-button-amazon {
+		background-color: #f90;
+	}
+
+	.affiliate-button-rakuten {
+		background-color: #b31e23;
+	}
+
+	.affiliate-button-yahoo {
+		background-color: #f03;
+	}
+
+	.check-box {
+		width: 100%;
+		margin-top: 10px;
+		color: #000;
+		background-color: #bcdeffa6;
+		border: 3px solid #4c89bb;
+		border-radius: 7px;
+	}
+
+	.check-box-title {
+		width: 40%;
+		padding: 5px 15px;
+		margin: -10px;
+		color: #fff;
+		background-color: #4c89bb;
+		border-radius: 3px;
+
+		i {
+			margin-right: 5px;
+		}
+	}
+
+	.check-box-contents {
+		margin-top: 20px;
+		margin-left: 25px;
+	}
+
+	.check-box-contents-inner {
+		display: block;
+		margin: -10px auto;
+
+		&::before {
+			margin-right: 10px;
+			font-size: 10px;
+			content: "●";
+		}
+	}
+}
+/* stylelint-enable a11y/font-size-is-readable */

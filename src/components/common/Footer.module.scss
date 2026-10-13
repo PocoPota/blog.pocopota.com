@@ -1,0 +1,28 @@
+.footer {
+	width: 100%;
+	max-width: calc(var(--content-width) + 2.5rem);
+	padding: 2.5rem 1.25rem 3rem;
+	margin: 5rem auto 0;
+	font-size: 0.8125rem;
+	color: var(--color-text-light);
+	letter-spacing: 0.05em;
+	border-top: 1px solid var(--color-border);
+}
+
+.links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem 1.5rem;
+	padding: 0;
+	margin-bottom: 0.75rem;
+	list-style: none;
+
+	a {
+		text-decoration: none;
+
+		&:hover,
+		&:focus-visible {
+			color: var(--color-primary);
+		}
+	}
+}
