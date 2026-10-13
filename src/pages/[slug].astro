@@ -7,16 +7,8 @@ import Layout from "@/layouts/Layout.astro";
 import type { GetStaticPaths } from "astro";
 
 export const getStaticPaths = (async () => {
-	const entries = [
-		...(await getCollection("posts")),
-		...(await getCollection("legacy")),
-	];
-	const ids = entries.map((entry) => entry.id);
-	const duplicate = ids.find((id, i) => ids.indexOf(id) !== i);
-	if (duplicate) {
-		throw new Error(`slug が posts と legacy で重複しています: ${duplicate}`);
-	}
-	return entries.map((entry) => ({
+	const posts = await getCollection("posts");
+	return posts.map((entry) => ({
 		params: { slug: entry.id },
 		props: { entry },
 	}));
@@ -49,11 +41,7 @@ const body = entry.body ?? "";
 			src="https://platform.twitter.com/widgets.js"
 		/>
 	)}
-	<Article
-		title={entry.data.title}
-		date={entry.data.date}
-		legacy={entry.collection === "legacy"}
-	>
+	<Article title={entry.data.title} date={entry.data.date}>
 		<Content />
 	</Article>
 </Layout>

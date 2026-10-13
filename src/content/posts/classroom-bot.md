@@ -3,6 +3,7 @@ title: "Classroomの投稿通知をしてくれるDiscord botを作る"
 date: 2022-04-30T23:45:47+09:00
 thumbnail: /images/content/classroombot-samune.png
 ---
+
 今回は不便な事をプログラムで解決していこうの回です。
 
 現在学校でのお知らせなどの連絡でGoogle Classroomというサービスを使っています。  
@@ -16,6 +17,7 @@ thumbnail: /images/content/classroombot-samune.png
 みんなDiscord使おう！！！！(関係ない)
 
 ## 要件定義的な
+
 ClassroomはGoogleのサービスなのでGoogleの他のサービスと相性が良さそうなので簡単に作れます。  
 そのため今回はGoogle App Script(GAS)を実行環境としたいと思います。  
 そしてGAS上でClassroom APIというものを走らせたいと思います。
@@ -25,12 +27,14 @@ botはwebhookの方で作りたいと思います。
 簡単なプログラムの紹介としてはGASを5分毎で実行させ、APIを使いClassroomの投稿情報を取得し、5分以内に投稿されたものだけbotで投げると言う感じです。
 
 ## 完成形
+
 以下の写真のような感じでDiscordに届くようにします。  
 ※名前等はもちろん偽名です。  
 <img src="/images/content/classroombot-2.png">
 <img src="/images/content/classroombot-1.png">
 
 ## プログラム本体
+
 できるだけ分かりやすいように、と後々便利なので機能ごとに関数にしてあります。  
 一部機能だけ欲しい方は関数だけを盗んでもらっても構いません。
 
@@ -166,10 +170,13 @@ function main() {
   }
 }
 ```
-github :  <a href="https://github.com/PocoPota/classroom-bot">https://github.com/PocoPota/classroom-bot</a>
+
+github : <a href="https://github.com/PocoPota/classroom-bot">https://github.com/PocoPota/classroom-bot</a>
 
 ## 使い方
+
 ### GAS
+
 GASでのDiscord botの作り方はネット上に沢山転がっていると思うので大まかにしか説明しません。ググれ！  
 まずはGASプロジェクトを作成してください。  
 そうしたら「サービス」の部分から「Google Classroom API」を選択して追加してください。
@@ -177,11 +184,13 @@ GASでのDiscord botの作り方はネット上に沢山転がっていると思
 で、上のコードをコピペ！
 
 ### ユーザーIDの特定
+
 ~~Classroom APIの仕様上ユーザー名の取得ができません。その代わりユーザーIDという20桁程度の数字の配列が与えられます。~~
 ~~以下のコードを追加してdev()を実行し、出力されたログと実際のClassroomとを見比べながらどのIDが誰かを特定していきます。~~
 
 ~~クラス一覧の場合はownerIdが、投稿の場合はcreatorUserIdがユーザーを識別するIDとなっています。  
 まぁ良い感じに特定してください。~~
+
 ```
 function dev(){
   console.log(getClasses());
@@ -197,24 +206,30 @@ function dev(){
 コードは変更しましたのでこのセクションは無視してください。（2023.02.27追記）
 
 ### Discord webhook
+
 Discordでbotのwebhookを発行して、上のコード58行目付近に貼り付ける場所があるのでコピペしてください。
 
 ### GAS トリガーの設定
+
 トリガーは以下の通りに設定します。
+
 - main関数を実行
 - 時間主導型
 - 分ベースのタイマー
 - 5分おき
 
 ## 完成
+
 これで5分ごとに実行されて新規投稿があればDiscordに通知されるbotが完成しました。  
 ぜひDiscordとClassroomを連携させて使ってみてください！
 
 ## P.S.
+
 コード自体の説明はだいぶ省きましたので疑問点などがあればDiscordかTwitterで受け付けますよ。
+
 - Discord : PocoPota#2788
 - Twitter : <a href="https://twitter.com/PocoPota_io" target="_blank">@PocoPota_io</a>
-  
+
 またsend関数の部分をいじればDiscord以外のLINE等でもbotを作ることができると思います。
 
-github :  <a href="https://github.com/PocoPota/classroom-bot">https://github.com/PocoPota/classroom-bot</a>
+github : <a href="https://github.com/PocoPota/classroom-bot">https://github.com/PocoPota/classroom-bot</a>

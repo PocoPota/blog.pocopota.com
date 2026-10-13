@@ -3,6 +3,7 @@ title: "家のLANが遅い！！原因の「まとめてネット」を安価で
 date: 2022-02-12T22:11:30+09:00
 thumbnail: /images/content/20220212220641.png
 ---
+
 <div class="section">
     <h2>うちのLANの速度遅くね？</h2>
     <p><span itemscope itemtype="http://schema.org/Photograph"><img src="/images/content/20220212161205.png" alt="f:id:pocopota:20220212161205p:plain" width="795" height="744" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span><br />
@@ -29,7 +30,7 @@ thumbnail: /images/content/20220212220641.png
 </div>
 <div class="section">
     <h2>まとめてネットのLANハブだけを変える</h2>
-    
+
 <div class="section">
     <h3>LANハブを変える際の注意点</h3>
     <p>LANハブを買いに行く前に1つだけ注意点があります。<br />
@@ -130,7 +131,7 @@ LANケーブルを外に出す必要があるのでカバーは削ったりし�
 </div>
 <div class="section">
     <h2>対処完了！</h2>
-    
+
 <div class="section">
     <h3>まとめてネットの周辺の様子</h3>
     <p>うちのまとめてネット周辺は以下のような感じになりました。<br />

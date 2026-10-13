@@ -3,6 +3,7 @@ title: "【はてなカスタマイズ】アーカイブページから特定の
 date: 2021-01-17T11:35:20+09:00
 thumbnail: /images/content/20210117113251.png
 ---
+
 <script>
     location.href = "https://hatena.pocopota.com/archive-display-none";
 </script>
@@ -23,7 +24,6 @@ thumbnail: /images/content/20210117113251.png
 <div class="section">
     <h2 id="コード">コード</h2>
     <p>次に下記のコードの「○○○○○○○○○○」の部分に先程コピーしたIDを挿入して、「デザイン→カスタマイズ」から「デザインCSS」に行き、そこに張り付けてください。</p>
-
 
 ```css
 .archive-entry[data-uuid="○○○○○○○○○○"] {

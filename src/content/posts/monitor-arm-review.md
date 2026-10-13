@@ -3,6 +3,7 @@ title: "【レビュー】デスク周りをスッキリさせたい！モニタ
 date: 2021-03-12T22:53:30+09:00
 thumbnail: /images/content/20210312225242.png
 ---
+
 <p>パソコンまわりの環境を整えたいけどお金がない、どうもPocoPotaです。<br />
 今回はモニターアームを購入したのでレビューしていきたいと思います。<br />
 今回購入したモニターアームはデュアルディスプレイ用で一番安いと言っても過言ではない3999円(投稿時)のものを買いました。<div class="affiliate-link-box"><br />
@@ -17,7 +18,7 @@ thumbnail: /images/content/20210312225242.png
 </div>
 <div class="section">
     <h2 id="開封">開封！！！</h2>
-    
+
 <div class="section">
     <h3 id="開封の儀">開封の儀</h3>
     <p>Amazonで買ったのですが、沢山紙が入っていました。<br />
@@ -40,7 +41,7 @@ thumbnail: /images/content/20210312225242.png
 </div>
 <div class="section">
     <h2 id="組み立て">組み立て</h2>
-    
+
 <div class="section">
     <h3 id="支柱クランプ部分">支柱＆クランプ部分</h3>
     <p><span itemscope itemtype="http://schema.org/Photograph"><img src="/images/content/20210311211603.png" alt="f:id:pocopota:20210311211603p:plain" title="" class="hatena-fotolife" itemprop="image"></span></p><p>4つの部品をぱぱっと組み立てて、完成です。<br />
@@ -98,7 +99,7 @@ thumbnail: /images/content/20210312225242.png
 </div>
 <div class="section">
     <h2 id="モニターアームのメリットデメリット">モニターアームのメリット・デメリット</h2>
-    
+
 <div class="section">
     <h3 id="モニターの下がスッキリ">モニターの下がスッキリ！</h3>
     <p>もうこれだけのために買ってもいいと言っていいほど最高です。モニターの下がスッキリことは最高です。このモニターアーム導入前後の写真を見てもらえばわかりますが、だいぶスッキリします。<div class="images-row mceNonEditable"><span itemscope itemtype="http://schema.org/Photograph"><img src="/images/content/20210108200523.png" alt="f:id:pocopota:20210108200523p:plain" title="" class="hatena-fotolife" itemprop="image"></span><span itemscope itemtype="http://schema.org/Photograph"><img src="/images/content/20210312073203.png" alt="f:id:pocopota:20210312073203p:plain" title="" class="hatena-fotolife" itemprop="image"></span></div></p>

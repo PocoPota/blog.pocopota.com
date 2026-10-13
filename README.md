@@ -37,12 +37,7 @@ bun dev
 
 ## 記事
 
-| 置き場所              | 内容                                         | 一覧・RSS |
-| --------------------- | -------------------------------------------- | --------- |
-| `src/content/posts/`  | 記事                                         | 出す      |
-| `src/content/legacy/` | 旧ブログの記事。URL を残すためだけに生成する | 出さない  |
-
-記事は `src/content/posts/<slug>.md` に置き、`/<slug>/` で公開される。slug が `posts` と `legacy` で重複するとビルドが失敗する。
+記事は `src/content/posts/<slug>.md` に置き、`/<slug>/` で公開される。すべての記事がトップの一覧と RSS に出る。
 
 ```markdown
 ---

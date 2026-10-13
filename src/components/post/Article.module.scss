@@ -189,10 +189,10 @@
 	}
 }
 
-// 旧記事の本文が使っているクラス。旧サイトの custom.scss から移した
-// 旧記事の見た目を保つため、旧サイトの文字サイズをそのまま使う
+// 旧ブログから移した記事の本文が使っている商品リンクボックスとチェックリストの囲み
+// 旧ブログの見た目を保つため、当時の文字サイズをそのまま使う
 /* stylelint-disable a11y/font-size-is-readable */
-.legacy :global {
+.body :global {
 	.affiliate-link-box {
 		display: flex;
 		border: 1px solid #dadada;

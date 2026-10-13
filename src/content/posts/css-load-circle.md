@@ -3,6 +3,7 @@ title: "CSSだけでロード中のぐるぐるを作る"
 date: 2021-10-24T09:02:30+09:00
 thumbnail: /images/content/20211024085700.png
 ---
+
 <p>今回はロードなどをしているときに出てくるあのぐるぐる（伝われ）を作っていこうと思います。</p>
 
 <div class="section">
@@ -33,7 +34,7 @@ thumbnail: /images/content/20211024085700.png
             }
         }
 </style>
-  
+
 こんな感じのものを作ります。</p>
 
 </div>
@@ -45,11 +46,11 @@ thumbnail: /images/content/20211024085700.png
 
 <div class="section">
     <h3>コード解説</h3>
-    
+
 ```html
 <div id="circle"></div>
 ```
-    
+
 ```css
 #circle {
     width: 18px;
@@ -89,7 +90,7 @@ thumbnail: /images/content/20211024085700.png
             0% {
                 transform: rotate(0deg);
             }
-    
+
             100% {
                 transform: rotate(360deg);
             }

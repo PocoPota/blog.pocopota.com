@@ -4,5 +4,3 @@ public/
 bun.lock
 pnpm-lock.yaml
 
-# 旧記事は旧サイトから移した HTML をそのまま保つ
-src/content/legacy/

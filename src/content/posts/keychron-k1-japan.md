@@ -3,6 +3,7 @@ title: "ついにKeychronが日本でも登場！！！！！！日本語配列�
 date: 2021-03-16T19:13:40+09:00
 thumbnail: /images/content/20210316184331.png
 ---
+
 <p>コペックジャパンは「Keychron K1 ワイヤレス・メカニカルキーボード」を3月15日に販売を開始しました。<br />
 <span itemscope itemtype="http://schema.org/Photograph"><img src="/images/content/20210316184331.png" alt="f:id:pocopota:20210316184331p:plain" title="" class="hatena-fotolife" itemprop="image"></span><br />
 Keychronシリーズはこれまで海外を中心に販売がされており、日本用のモデルは販売されていませんでした。</p><p>モデルは2種類用意されており、フルサイズモデルが16720円（税込）、テンキーレスモデルが14960円（税込）となっています。</p><p>K1は高さ18mmの超薄型ボディとなっており、他のメカニカルキーボードと比べてもタイピングに必要な力が少なく、また指の移動が少ないことにより、指の疲労が軽減され、比類のないタイピングの快適さが得ることが出来ます。</p><p><span itemscope itemtype="http://schema.org/Photograph"><img src="/images/content/20210316185120.png" alt="f:id:pocopota:20210316185120p:plain" title="" class="hatena-fotolife" itemprop="image"></span><br />

@@ -3,6 +3,7 @@ title: "【はてなブログ無料版】トップページをカスタマイズ
 date: 2021-06-20T22:31:50+09:00
 thumbnail: /images/content/20210620223015.png
 ---
+
 <script>
     location.href = "https://hatena.pocopota.com/hatena-toppage-customize";
 </script>

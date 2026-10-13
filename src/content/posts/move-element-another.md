@@ -3,6 +3,7 @@ title: "【はてなカスタマイズ】サイドバーの要素を記事内に
 date: 2021-01-31T10:12:00+09:00
 thumbnail: /images/content/20210131100951.png
 ---
+
 <script>
     location.href = "https://hatena.pocopota.com/move-element-another";
 </script>
@@ -30,7 +31,7 @@ clearInterval(timer);
 </div>
 <div class="section">
     <h2 id="コードの説明">コードの説明</h2>
-    
+
 <div class="section">
     <h3 id="div">div</h3>
     <p>一番最初のdivは移動させる先の要素です。なのでこのdivを張り付けた場所に選択した要素が移動してきます。</p>

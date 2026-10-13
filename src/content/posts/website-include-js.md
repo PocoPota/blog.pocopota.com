@@ -3,6 +3,7 @@ title: "JavaScriptでサイトの共通化（インクルード化）をしよ�
 date: 2021-12-12T11:04:30+09:00
 thumbnail: /images/content/20211212105750.png
 ---
+
 <p>今回はサイトの共通化をしていこうと思います。共通化はインクルードと言ったりもしますね。</p>
 <div class="section">
     <h2 id="サイトの共通化とは">サイトの共通化とは？</h2>
@@ -127,7 +128,7 @@ insertDiv.insertAdjacentHTML('beforeend','<p>insertAdjacentHTMLで共通化！</
 メイン部分はほとんど書いてませんが、head、header、footerに色々書いてありますね。<br />
 この一部を変えたいだけなのに存在する数ページ、数十ページを変更するのは面倒くさい極まりないでしょう。</p>
 
-``` html
+```html
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -255,7 +256,7 @@ window.onload = function(){
     header.innerHTML = header_content; // innerHTMLでHTMLを追加
 
 
-    // footer 
+    // footer
     var footer_content = '<div>©PocoPota</div>'; // 追加するHTMLを定義
     var footer = document.getElementById('footer'); // 追加する部分を取得
     footer.innerHTML = footer_content; // innerHTMLでHTMLを追加

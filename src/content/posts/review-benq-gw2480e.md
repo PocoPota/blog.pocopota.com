@@ -3,6 +3,7 @@ title: "【レビュー】「BenQ GW2480E」をレビュー　超ベゼルレス
 date: 2021-01-08T20:37:00+09:00
 thumbnail: /images/content/20210108082157.png
 ---
+
 <p>今回はパソコン環境を良くするために、前々から企てていたデュアルディスプレイ化を実行するためにBenQの「GW2480E」を購入したので色々とレビューしていきたいと思います。</p><p><div class="affiliate-link-box"><br />
   <a href="https://amzn.to/2XmXJTK" target="_blank"><img src="/images/content/20210108130107.png" title="GW2480E"></a><br />
   <div class="affiliate-box-information"><br />
@@ -127,7 +128,7 @@ thumbnail: /images/content/20210108082157.png
 </div>
 <div class="section">
     <h2 id="ディスプレイについて">ディスプレイについて</h2>
-    
+
 <div class="section">
     <h3 id="ディスプレイ設定">ディスプレイ設定</h3>
     <p>ディスプレイの輝度やブルーライトの軽減などの設定はディスプレイ下の4つのボタンで行います。（白いボタンは電源ボタン）</p><p><span itemscope itemtype="http://schema.org/Photograph"><img src="/images/content/20210108193405.png" alt="f:id:pocopota:20210108193405p:plain" title="" class="hatena-fotolife" itemprop="image"></span></p><p>ここではブルーライトの設定や、音量調節などを行うことができます。<br />

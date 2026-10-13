@@ -16,5 +16,12 @@ export default {
 				parser: "astro",
 			},
 		},
+		{
+			// 記事中のサンプルコードは書いたとおりに残す
+			files: "*.md",
+			options: {
+				embeddedLanguageFormatting: "off",
+			},
+		},
 	],
 };

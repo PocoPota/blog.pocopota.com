@@ -2,6 +2,7 @@
 title: "はてなブログからHugoに移行しました！"
 date: 2022-03-30T21:04:34+09:00
 ---
+
 今回はお知らせです。
 <a href="https://pocopota.com">pocopota.com</a>の独自ドメインの取得をしたので、ブログURL変更と共にはてなブログからHugoに移行しました。
 

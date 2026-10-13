@@ -3,6 +3,7 @@ title: "CSSでborderのみの半円をつくる"
 date: 2021-09-03T23:33:00+09:00
 thumbnail: /images/content/20210903233223.png
 ---
+
 <div class="section">
     <h2>borderのみの半円を作りたい！</h2>
     <p>完成形がこんな感じ↓の枠線だけがついた半円を作りたい！<br />
@@ -30,7 +31,7 @@ thumbnail: /images/content/20210903233223.png
 <div class="circle"></div></p><br />
 <p>条件通りdivは一つでいきたいと思います。</p>
 
-```html 
+```html
 <div class="circle"></div>
 ```
 
@@ -95,7 +96,6 @@ htmlは先程のものと変わりません。<br />
         border: 15px solid black;
     }
 ```
-
 
 </div>
 <div class="section">

@@ -6,10 +6,9 @@ import styles from "./Article.module.scss";
 interface Props {
 	title: string;
 	date: Date;
-	legacy: boolean;
 }
 
-const { title, date, legacy } = Astro.props;
+const { title, date } = Astro.props;
 ---
 
 <article class={styles.article}>
@@ -17,7 +16,7 @@ const { title, date, legacy } = Astro.props;
 		<h1 class={styles.title}>{title}</h1>
 		<FormattedDate date={date} />
 	</header>
-	<div class:list={[styles.body, legacy && styles.legacy]}>
+	<div class={styles.body}>
 		<slot />
 	</div>
 </article>
