@@ -25,8 +25,6 @@ date: 2026-10-13T12:00:00+09:00
 
 ## フォント技術
 
----
-
 - [フォントでつながった文字を表現する（その 1）—文脈に依存した字形変化とは？](https://zenn.dev/morisawa/articles/remmentai-font-1)（記事）⭐️⭐️
 - [フォントでつながった文字を表現する（その 2）—欧文フォントの場合](https://zenn.dev/morisawa/articles/remmentai-font-2)（記事）⭐️⭐️
 - [フォントでつながった文字を表現する（その 3）—連綿体フォントを作成する](https://zenn.dev/morisawa/articles/remmentai-font-3)（記事）⭐️⭐️
