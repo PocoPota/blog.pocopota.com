@@ -1,11 +1,17 @@
 .header {
-	max-width: var(--content-width);
-	padding: 1.5rem 1rem;
+	width: 100%;
+	max-width: calc(var(--content-width) + 2.5rem);
+	padding: 3.5rem 1.25rem 3rem;
 	margin: 0 auto;
+
+	@media (max-width: 600px) {
+		padding: 2.5rem 1.25rem 2rem;
+	}
 }
 
 .title {
 	font-size: 1.25rem;
-	font-weight: 700;
+	font-weight: 500;
+	letter-spacing: 0.12em;
 	text-decoration: none;
 }

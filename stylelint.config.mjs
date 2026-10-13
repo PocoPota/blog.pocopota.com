@@ -26,5 +26,5 @@ export default {
 			},
 		],
 	},
-	ignoreFiles: ["./src/styles/reset.css"],
+	ignoreFiles: ["./src/styles/reset.css", "dist/**"],
 };

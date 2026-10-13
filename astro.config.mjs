@@ -7,4 +7,9 @@ export default defineConfig({
 	site: "https://blog.pocopota.com",
 	trailingSlash: "always",
 	integrations: [sitemap()],
+	markdown: {
+		shikiConfig: {
+			theme: "github-light",
+		},
+	},
 });

@@ -1,29 +1,36 @@
 :root {
 	// --- Colors ---
-	--color-primary: #1a73e8;
-	--color-primary-dark: #1557b0;
-	--color-secondary: #f5f5f5;
-	--color-accent: #ff6b35;
+	--color-primary: #3d6d8c; // 縹色を落ち着かせた色。リンクと強調に使う
+	--color-primary-dark: #2b5370;
+	--color-secondary: #f3f2ee;
+	--color-accent: #3d6d8c;
 
-	--color-text: #333;
-	--color-text-light: #666;
+	--color-text: #2b2d2f; // 墨
+	--color-text-light: #6e7378;
 	--color-text-inverse: #fff;
-	--color-focus-ring: #005fcc;
+	--color-focus-ring: #3d6d8c;
 
-	--color-bg: #fff;
-	--color-bg-sub: #f8f9fa;
-	--color-border: #e0e0e0;
+	--color-bg: #fbfbf8; // 生成りに寄せた白
+	--color-bg-sub: #f1f0eb;
+	--color-border: #e3e1db;
+	--color-selection: #dce8ef;
 
 	// --- Typography ---
-	--font-family-base: "Noto Sans JP", sans-serif;
-	--font-family-en: "Noto Sans", sans-serif;
+	--font-family-base:
+		"Zen Kaku Gothic New", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+		sans-serif;
+	--font-family-heading:
+		"Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+	--font-family-en: "Zen Kaku Gothic New", sans-serif;
+	--font-family-mono:
+		ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 
 	// --- Border Radius ---
-	--radius-sm: 4px;
-	--radius-md: 8px;
-	--radius-lg: 16px;
+	--radius-sm: 3px;
+	--radius-md: 6px;
+	--radius-lg: 12px;
 	--radius-full: 9999px;
 
 	// --- Layout ---
-	--content-width: 720px;
+	--content-width: 680px;
 }
