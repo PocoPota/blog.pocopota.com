@@ -5,6 +5,7 @@
     "": {
       "name": "pocopota-blog",
       "dependencies": {
+        "@astrojs/markdown-satteri": "0.4.3",
         "@astrojs/rss": "4.0.19",
         "@astrojs/sitemap": "3.7.4",
         "astro": "7.3.8",
