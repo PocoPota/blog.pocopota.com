@@ -26,14 +26,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <html lang="ja">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="/favicon.ico" />
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="/images/favicon-32x32.png"
-		/>
-		<link rel="apple-touch-icon" href="/images/apple-icon-180x180.png" />
+		<link rel="icon" href="/favicon.ico" sizes="32x32" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		{description && <meta name="description" content={description} />}
 		<link rel="canonical" href={canonicalURL} />

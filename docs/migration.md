@@ -26,7 +26,7 @@ blog.pocopota.comをHugoからAstroに作り直し、pocopota.hateblo.jpの記�
 
 ### 1.3 移行後の構成
 
-- [sohosai/astro-template26](https://github.com/sohosai/astro-template26)をもとにする。Astro 7.3、bun、Node 24（`.node-version`）、`@astrojs/sitemap`、ESLint・Prettier・Stylelint、lefthookの構成。
+- [sohosai/astro-template26](https://github.com/sohosai/astro-template26)をもとにする。Astro 7.3、bun、Node 24（`.node-version`）、`@astrojs/sitemap`、ESLint・Prettier・Stylelintの構成。
 - 同じリポジトリで作り、GitHub Pagesからblog.pocopota.comとして配信する。pocopota.hateblo.jpは新サイトへの案内だけを残す（5.3）。
 - デザインは最低限のものを新しく作る。旧記事の本文にだけ、旧サイトのスタイルの一部を当てる（4.1）。
 
@@ -84,15 +84,19 @@ blog.pocopota.comの現行URLのうち、移行後も同じパスで出すもの
 
 `static/`以下を、同じパスのまま`public/`へ移す。
 
-| パス                                                                                                                         | 内容                    | 参照元                                     |
-| ---------------------------------------------------------------------------------------------------------------------------- | ----------------------- | ------------------------------------------ |
-| `/images/content/*`                                                                                                          | 記事画像129ファイル     | 旧記事の本文とサムネイル                   |
-| `/images/default.jpg`                                                                                                        | 既定のOGP画像           | 旧記事1本のサムネイル、外部のOGPキャッシュ |
-| `/images/favicon-*.png`、`/images/favicon.ico`、`/images/*-icon-*.png`、`/images/manifest.json`、`/images/browserconfig.xml` | faviconとアプリアイコン | 現行の`<head>`                             |
-| `/images/pocopota-icon.jpg`、`/images/blog-logo.jpg`                                                                         | 著者アイコンとロゴ      | 現行のサイドバーとヘッダー                 |
-| `/CNAME`                                                                                                                     | 独自ドメインの設定      | GitHub Pages                               |
+| パス                                                 | 内容                | 参照元                                     |
+| ---------------------------------------------------- | ------------------- | ------------------------------------------ |
+| `/images/content/*`                                  | 記事画像129ファイル | 旧記事の本文とサムネイル                   |
+| `/images/default.jpg`                                | 既定のOGP画像       | 旧記事1本のサムネイル、外部のOGPキャッシュ |
+| `/images/pocopota-icon.jpg`、`/images/blog-logo.jpg` | 著者アイコンとロゴ  | 現行のサイドバーとヘッダー                 |
+| `/CNAME`                                             | 独自ドメインの設定  | GitHub Pages                               |
 
-新サイトのfaviconを別に用意する場合も、`/images/`以下の旧ファイルは残す。ブックマークや外部サービスが旧パスを参照しているため。
+favicon類は引き継がず、次の2つだけを置く。旧サイトの`/images/`以下にあったfavicon、アプリアイコン、`manifest.json`、`browserconfig.xml`は削除する。
+
+| パス                    | 内容                                 |
+| ----------------------- | ------------------------------------ |
+| `/favicon.ico`          | 16×16と32×32のPNGを格納したアイコン  |
+| `/apple-touch-icon.png` | iOSのホーム画面用の180×180のアイコン |
 
 ### 2.3 フィードとsitemap
 

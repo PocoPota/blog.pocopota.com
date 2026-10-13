@@ -64,7 +64,7 @@ export default [
 		},
 	},
 	{
-		files: ["**/*.config.{js,mjs,cjs,ts,mts,cts}", "scripts/**"],
+		files: ["**/*.config.{js,mjs,cjs,ts,mts,cts}"],
 		languageOptions: {
 			globals: {
 				...globals.node,
