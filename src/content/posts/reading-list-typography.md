@@ -37,6 +37,8 @@ date: 2026-10-13T12:00:00+09:00
 - [Fonts and Layout for Global Scripts](https://simoncozens.github.io/fonts-and-layout/)（Web書籍）⭐️
 - [State of Text Rendering 2024](https://behdad.org/doc/text2024/)（記事）⭐️
 - [Webフォント実践ガイド](https://gihyo.jp/book/2025/978-4-297-15056-3)（書籍）⭐️⭐️⭐️
+- [ウェブタイポグラフィ](https://store.bookandsons.com/?pid=152141743)（書籍）⭐️⭐️
+- [オンスクリーン タイポグラフィ](https://bnn.co.jp/products/9784802512077)（書籍）⭐️⭐️
 
 ## 文字コード
 
