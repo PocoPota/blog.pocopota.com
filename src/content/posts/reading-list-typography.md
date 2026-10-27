@@ -13,6 +13,7 @@ date: 2026-10-13T12:00:00+09:00
 
 - [OpenType Specification](https://learn.microsoft.com/ja-jp/typography/opentype/spec/)（仕様）⭐️⭐️⭐️
 - [日本語組版処理の要件（JLREQ）](https://w3c.github.io/jlreq/?lang=ja)（仕様）⭐️⭐️⭐️
+- [CSS Fonts Module Level 4](https://drafts.csswg.org/css-fonts-4/)（仕様）⭐️⭐️
 
 ## 特集「ディジタルタイプ」（情報処理学会誌）⭐️⭐️⭐️
 
