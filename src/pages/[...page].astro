@@ -7,7 +7,7 @@ import { getSortedPosts } from "@/lib/posts";
 import type { GetStaticPaths } from "astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
-	return paginate(await getSortedPosts(), { pageSize: 10 });
+	return paginate(await getSortedPosts(), { pageSize: 12 });
 }) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
@@ -16,6 +16,7 @@ const { page } = Astro.props;
 <Layout
 	title={page.currentPage === 1 ? undefined : `${page.currentPage}ページ目`}
 	description={SITE_DESCRIPTION}
+	wide
 >
 	<PostList page={page} />
 </Layout>

@@ -14,6 +14,20 @@
 	border-bottom: 1px solid var(--color-border);
 }
 
+.series {
+	margin-bottom: 0.75rem;
+
+	a {
+		color: var(--color-primary);
+		text-decoration: none;
+
+		&:hover,
+		&:focus-visible {
+			color: var(--color-primary-dark);
+		}
+	}
+}
+
 .title {
 	margin-bottom: 1rem;
 	font-family: var(--font-family-heading);
@@ -133,6 +147,17 @@
 			border-left: 2px solid var(--color-border);
 		}
 
+		aside {
+			padding: 1.25rem;
+			margin: 0 0 1.5rem;
+			background-color: var(--color-bg-sub);
+			border-radius: var(--radius-sm);
+
+			> :last-child {
+				margin-bottom: 0;
+			}
+		}
+
 		code {
 			font-family: var(--font-family-mono);
 			font-size: 0.875em;
@@ -187,6 +212,13 @@
 			border-top: 1px solid var(--color-border);
 		}
 	}
+}
+
+// シリーズの記事一覧など、本文のあとに置く要素。本文の装飾が混ざらないよう .body の外に置く
+.footer {
+	padding-top: 2.5rem;
+	margin-top: 3.5rem;
+	border-top: 1px solid var(--color-border);
 }
 
 // 旧ブログから移した記事の本文が使っている商品リンクボックスとチェックリストの囲み

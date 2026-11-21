@@ -2,7 +2,9 @@
 import { getCollection, render } from "astro:content";
 
 import Article from "@/components/post/Article.astro";
+import SeriesList from "@/components/series/SeriesList.astro";
 import Layout from "@/layouts/Layout.astro";
+import { getSeriesInfo } from "@/lib/series";
 
 import type { GetStaticPaths } from "astro";
 
@@ -17,6 +19,8 @@ export const getStaticPaths = (async () => {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const body = entry.body ?? "";
+
+const seriesInfo = await getSeriesInfo(entry);
 ---
 
 <Layout
@@ -41,7 +45,27 @@ const body = entry.body ?? "";
 			src="https://platform.twitter.com/widgets.js"
 		/>
 	)}
-	<Article title={entry.data.title} date={entry.data.date}>
+	<Article
+		title={entry.data.title}
+		date={entry.data.date}
+		series={
+			seriesInfo && {
+				title: seriesInfo.series.data.title,
+				href: `/series/${seriesInfo.series.id}/`,
+				group: seriesInfo.group.name,
+				position: seriesInfo.position,
+				total: seriesInfo.total,
+			}
+		}
+	>
 		<Content />
+		{seriesInfo && (
+			<SeriesList
+				slot="footer"
+				heading={`${seriesInfo.group.name}の記事`}
+				posts={seriesInfo.group.posts}
+				currentId={entry.id}
+			/>
+		)}
 	</Article>
 </Layout>

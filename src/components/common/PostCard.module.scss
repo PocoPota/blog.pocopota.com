@@ -1,0 +1,54 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	height: 100%;
+	text-decoration: none;
+}
+
+.thumbnail {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 800 / 420;
+	object-fit: cover;
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
+}
+
+.current .thumbnail {
+	border-color: var(--color-primary);
+}
+
+.meta {
+	font-size: 0.8125rem;
+	font-variant-numeric: tabular-nums;
+	color: var(--color-text-light);
+	letter-spacing: 0.08em;
+}
+
+.currentLabel {
+	margin-right: 0.5rem;
+	color: var(--color-primary);
+}
+
+.title {
+	font-family: var(--font-family-heading);
+	font-size: 1.1875rem;
+	font-weight: 600;
+	font-feature-settings: "palt";
+	line-height: 1.6;
+	color: var(--color-text);
+	letter-spacing: 0.04em;
+	transition: color 0.2s;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	.title {
+		transition: none;
+	}
+}
+
+a.card:hover .title,
+a.card:focus-visible .title {
+	color: var(--color-primary);
+}

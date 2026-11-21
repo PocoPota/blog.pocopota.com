@@ -5,18 +5,36 @@ import styles from "./Article.module.scss";
 
 interface Props {
 	title: string;
-	date: Date;
+	date?: Date;
+	series?: {
+		title: string;
+		href: string;
+		group: string;
+		position: number;
+		total: number;
+	};
 }
 
-const { title, date } = Astro.props;
+const { title, date, series } = Astro.props;
 ---
 
 <article class={styles.article}>
 	<header class={styles.header}>
+		{series && (
+			<p class={styles.series}>
+				シリーズ「<a href={series.href}>{series.title}</a>」 › {series.group}{" "}
+				{series.position}/{series.total}
+			</p>
+		)}
 		<h1 class={styles.title}>{title}</h1>
-		<FormattedDate date={date} />
+		{date && <FormattedDate date={date} />}
 	</header>
 	<div class={styles.body}>
 		<slot />
 	</div>
+	{Astro.slots.has("footer") && (
+		<footer class={styles.footer}>
+			<slot name="footer" />
+		</footer>
+	)}
 </article>
