@@ -24,7 +24,7 @@ series:
 ![ベタ組みと詰め組みの比較。枠は各文字が占める幅](/images/posts/web-wao-konshoku-spacing/beta.png)
 
 CSS では、[`font-feature-settings`](https://developer.mozilla.org/ja/docs/Web/CSS/font-feature-settings) で OpenType の [`palt`](https://learn.microsoft.com/en-us/typography/opentype/spec/features_pt#tag-palt) フィーチャーを指定します。
-`palt` は、和文（約物を含む）を1文字ずつの幅に詰めるフィーチャーです。
+`palt` は、全角の幅で作られた文字（かな、漢字、約物、全角英数字）を、1文字ずつの幅に詰めるフィーチャーです。
 
 ```css
 body {
@@ -32,25 +32,24 @@ body {
 }
 ```
 
-どのフィーチャーもフォントに入っていなければ効きません。
-また、`font-feature-settings` は [`@font-face` の記述子](https://developer.mozilla.org/ja/docs/Web/CSS/@font-face/font-feature-settings)としても書けるので、和文フォントだけに指定することもできます。
+フォントに `palt` のデータが入っていなければ、指定しても詰まりません。
 
 ## 約物のアキ
 
-約物は字面が半角ほどの幅で、前後のアキを含めて全角の幅で組むのが基本です。
+約物は字面が半角ほどの幅で、前後のアキを含めて全角の幅で組むのが基本です。[^yakumono]
 約物が続く所やキャプションのような狭い所では、このアキを詰めます。
 
 CSS では、次の OpenType フィーチャーでアキを詰められます。
 
 - [`halt`](https://learn.microsoft.com/en-us/typography/opentype/spec/features_fj#tag-halt): 約物を半角幅にする。`palt` とは同時に使わない
-- [`chws`](https://learn.microsoft.com/en-us/typography/opentype/spec/features_ae#tag-chws): 約物が続く所のアキを詰める
+- [`chws`](https://learn.microsoft.com/en-us/typography/opentype/spec/features_ae#tag-chws): 約物が続く所のアキを詰める。`palt` とは同時に使わない
 
 約物のアキを詰めるプロパティとして、[`text-spacing-trim`](https://developer.mozilla.org/ja/docs/Web/CSS/text-spacing-trim) もあります。
 初期値の `normal` では、約物が続く所のアキを詰めます。
 行頭の始め括弧を半角にする `trim-start` や、すべての約物を全角で組む `space-all` などの値もあります。
 
-[MDN の互換性データ](https://github.com/mdn/browser-compat-data)では、2026年10月時点で対応しているのは Chrome 123 以降などの Chromium 系のブラウザだけで、Firefox と Safari は対応していません。
-また、MDN の説明では、フォントに `halt` か `chws` が入っていないと効きません。
+2026年10月時点で、`text-spacing-trim` に対応しているのは Chrome 123 以降などの Chromium 系のブラウザだけで、Firefox と Safari は対応していません。
+また、フォントに `halt` か `chws` が入っていないと効きません。
 
 ## ペアカーニング
 
@@ -71,9 +70,11 @@ body {
 }
 ```
 
-`palt` が1文字ごとの幅そのものを変えるのに対し、`kern` は文字の組み合わせごとに間隔を調整します。
-和文では `palt` で幅を詰めてから、組み合わせごとに調整します。
-`palt` で幅を変えた文字同士のペアカーニングには、[`apkn`](https://learn.microsoft.com/en-us/typography/opentype/spec/features_ae#tag-apkn) フィーチャーを使います。
+`palt` で幅を詰めた和文にも、「アノ」のような組み合わせごとの詰めを持つフォントがあります。
+モリサワの A P-OTF は、この詰めを `kern` に入れているので、`palt` と一緒に `font-kerning: normal` を指定すると使われます。
+
+OpenType の仕様では、この詰めを `kern` ではなく [`apkn`](https://learn.microsoft.com/en-us/typography/opentype/spec/features_ae#tag-apkn) フィーチャーに入れることが勧められています。
+`apkn` に対応したフォントはまだ少ないですが、使うときは `palt` と一緒に `font-feature-settings` で指定します。
 
 ```css
 body {
@@ -103,7 +104,7 @@ CSS では [`letter-spacing`](https://developer.mozilla.org/ja/docs/Web/CSS/lett
 <!-- ツメ・グリフ単位の上下位置 -->
 
 CSS では、[`text-autospace`](https://developer.mozilla.org/ja/docs/Web/CSS/text-autospace) で和文と欧文・数字の間にアキを入れます。
-[MDN の互換性データ](https://github.com/mdn/browser-compat-data)では、Chrome 140、Firefox 145、Safari 18.4 で対応した新しいプロパティです。
+Chrome 140、Firefox 145、Safari 18.4 で対応した新しいプロパティです。
 
 ```css
 body {
@@ -115,7 +116,7 @@ body {
 しかし Chrome・Firefox・Safari はどれも `no-autospace` を初期値として実装しているので、アキを入れるには明示的に指定します。
 初期値をどうするかは [w3c/csswg-drafts#12386](https://github.com/w3c/csswg-drafts/issues/12386) で議論されています。
 
-入るアキの量は[仕様](https://drafts.csswg.org/css-text-4/#text-autospace-property)で全角の8分の1（`0.125ic`）と決まっていて、変えられません。
+入るアキの量は仕様で全角の8分の1（`0.125ic`）と決まっていて、変えられません。
 JLreq の四分（全角の4分の1）より狭い値です。
 
 ## CSS では実現できないこと
@@ -139,5 +140,7 @@ JLreq の四分（全角の4分の1）より狭い値です。
 - [「約物」のアキと調整｜モリサワ note編集部](https://note.morisawa.co.jp/n/nff5591a07714)
 - [CSS Text Module Level 4｜W3C](https://drafts.csswg.org/css-text-4/)
 - [Registered features (OpenType 1.9.1)｜Microsoft Learn](https://learn.microsoft.com/en-us/typography/opentype/spec/featurelist)
+
+[^yakumono]: [「約物」のアキと調整｜モリサワ note編集部](https://note.morisawa.co.jp/n/nff5591a07714)
 
 [^ap-otf]: [自動の文字詰めがより便利に！「A P-OTF」フォント｜モリサワ公式note](https://note.morisawa.co.jp/n/n77f356ee2ec9)

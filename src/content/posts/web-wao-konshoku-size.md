@@ -1,7 +1,7 @@
 ---
 title: "Web の和欧混植で欧文の大きさ・位置・太さを合わせる"
 date: 2026-11-22T12:02:00+09:00
-description: "size-adjust や font-weight、font-variation-settings などで、欧文の大きさ・位置・太さを和文に合わせる方法を紹介します。"
+description: "size-adjust や position、font-weight などで、欧文の大きさ・位置・太さを和文に合わせる方法を紹介します。"
 series:
   id: web-font
   group: 和欧混植
@@ -79,7 +79,23 @@ CSS の `@font-face` では欧文の上下の位置を変えられないので�
 `@font-face` の [`font-weight`](https://developer.mozilla.org/ja/docs/Web/CSS/@font-face/font-weight) は、そのフォントをどのウェイトとして扱うかを宣言する記述子です。
 ウェイトごとにファイルが分かれたフォントなら、宣言するウェイトに別のウェイトのファイルを割り当てます。
 
+このとき、和文フォントの `@font-face` にも、使うウェイトを宣言しておきます。
+宣言しないと、太字の部分の和文が別のフォントで表示されます。
+
 ```css
+/* 和文フォント。欧文の @font-face が優先されるよう、欧文より先に書く */
+@font-face {
+  font-family: "Mix";
+  src: url("/fonts/NotoSansJP-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Mix";
+  src: url("/fonts/NotoSansJP-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+
 /* 本文（400）の欧文には Outfit の Light を使う */
 @font-face {
   font-family: "Mix";
@@ -97,14 +113,11 @@ CSS の `@font-face` では欧文の上下の位置を変えられないので�
 }
 ```
 
-このとき、和文フォントの `@font-face` にも、使うウェイトを宣言しておきます。
-宣言しないと、太字の部分の和文が別のフォントで表示されます。
-
 <aside>
 
 **太字の和文が別のフォントになる理由**
 
-ブラウザは、`font-weight` を書かない `@font-face` を、[ウェイト 400 のフォントとして扱います](https://drafts.csswg.org/css-fonts-4/#font-prop-desc)。
+ブラウザは、`font-weight` を書かない `@font-face` を、ウェイト 400 のフォントとして扱います。
 Outfit の `@font-face` を上のように書き、和文フォントの `@font-face` に `font-weight` を書かないと、ブラウザは欧文と和文を次の `@font-face` で表示します。
 
 | 文字 | 通常（要素の `font-weight: 400`） | 太字（要素の `font-weight: 700`）         |
@@ -112,50 +125,11 @@ Outfit の `@font-face` を上のように書き、和文フォントの `@font-
 | 欧文 | Outfit Light                      | Outfit SemiBold                           |
 | 和文 | Noto Sans JP                      | なし（`font-family` の次の `sans-serif`） |
 
-ブラウザは、要素の `font-weight` に合う `@font-face` があれば、ウェイトの合わない `@font-face` を、その要素の文字に使う候補から外します（[CSS Fonts の照合の手順](https://drafts.csswg.org/css-fonts-4/#font-matching-algorithm)）。
+ブラウザは、要素の `font-weight` に合う `@font-face` があれば、ウェイトの合わない `@font-face` を、その要素の文字に使う候補から外します。
 太字の部分には 700 の Outfit SemiBold の `@font-face` があるので、ブラウザは 400 の Noto Sans JP の `@font-face` を太字の文字に使いません。
 Outfit SemiBold には和文のグリフがないので、ブラウザは太字の和文を `font-family` の次に書いた `sans-serif` で表示します。
 
 </aside>
-
-和文フォントが[バリアブルフォント](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_fonts/Variable_fonts_guide)なら、次のようにウェイトを範囲で宣言できます。
-
-```css
-@font-face {
-  font-family: "Mix";
-  src: url("/fonts/NotoSansJP[wght].woff2") format("woff2");
-  font-weight: 100 900;
-}
-```
-
-バリアブルフォントは1つのファイルにすべてのウェイトが入っていて、要素の `font-weight` の値がそのままウェイト軸（`wght`）の値になります。
-そのため、ファイルを割り当て直す方法は使えません。
-
-代わりに、`@font-face` の [`font-variation-settings`](https://developer.mozilla.org/ja/docs/Web/CSS/@font-face/font-variation-settings) 記述子で `wght` の値を指定します。
-CSS Fonts の仕様では、`font-weight` から決まる値を当てたあとに `@font-face` の `font-variation-settings` を当てるので、記述子のほうが優先されます（[Feature and variation precedence](https://drafts.csswg.org/css-fonts-4/#feature-variation-precedence)）。
-そのため、宣言したウェイトとは違う太さで表示できます。
-
-```css
-@font-face {
-  font-family: "Mix";
-  src: url("/fonts/Outfit[wght].woff2") format("woff2");
-  font-weight: 400;
-  font-variation-settings: "wght" 350;
-  unicode-range: U+0021-007E;
-}
-
-@font-face {
-  font-family: "Mix";
-  src: url("/fonts/Outfit[wght].woff2") format("woff2");
-  font-weight: 700;
-  font-variation-settings: "wght" 650;
-  unicode-range: U+0021-007E;
-}
-```
-
-記述子で `wght` の値を固定するので、使うウェイトごとに `@font-face` を書きます。
-[MDN の互換性データ](https://github.com/mdn/browser-compat-data)では、この記述子に対応しているのは Chrome 140 以降と Firefox 62 以降で、2026年10月時点で Safari は対応していません。
-Safari では、欧文が `font-weight` どおりの太さ（この例では 400 と 700）で表示されます。
 
 ## 参考文献
 
@@ -164,4 +138,3 @@ Safari では、欧文が `font-weight` どおりの太さ（この例では 400
 - [デザインの｢混植｣って何？ 知っているようで知らない｢混植｣の話と基本的な使い方を解説 ｜デザインを深掘り MdN](https://www.mdn.co.jp/design/BasicMethod/7314)
 - [日本語の中でアルファベットを組む！ 和欧混植のポイント｜モリサワ　note編集部](https://note.morisawa.co.jp/n/na6e9f79316a8)
 - [CSS Fonts Module Level 4｜W3C](https://drafts.csswg.org/css-fonts-4/)
-- [可変フォントガイド｜MDN](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_fonts/Variable_fonts_guide)

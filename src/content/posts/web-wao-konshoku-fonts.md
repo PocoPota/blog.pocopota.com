@@ -48,7 +48,7 @@ body {
 }
 ```
 
-同じファミリーの中で範囲が重なる場合は、あとに定義した `@font-face` が優先されます（[CSS Fonts の `unicode-range`](https://drafts.csswg.org/css-fonts-4/#descdef-font-face-unicode-range)）。
+同じファミリーの中で範囲が重なる場合は、あとに定義した `@font-face` が優先されます。
 この例では、ASCII の範囲は Outfit で、それ以外は Noto Sans JP で表示されます。
 
 <aside>
