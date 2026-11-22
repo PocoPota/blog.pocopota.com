@@ -1,5 +1,6 @@
 ---
 import FormattedDate from "@/components/common/FormattedDate.astro";
+import Phrases from "@/components/common/Phrases.astro";
 
 import styles from "./Article.module.scss";
 
@@ -26,7 +27,9 @@ const { title, date, series } = Astro.props;
 				{series.position}/{series.total}
 			</p>
 		)}
-		<h1 class={styles.title}>{title}</h1>
+		<h1 class={styles.title}>
+			<Phrases text={title} />
+		</h1>
 		{date && <FormattedDate date={date} />}
 	</header>
 	<div class={styles.body}>

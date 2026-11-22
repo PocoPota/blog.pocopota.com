@@ -1,4 +1,5 @@
 ---
+import Phrases from "./Phrases.astro";
 import styles from "./PostCard.module.scss";
 
 interface Props {
@@ -29,5 +30,7 @@ const Tag = href ? "a" : "div";
 		{!href && <span class={styles.currentLabel}>この記事</span>}
 		<slot />
 	</span>
-	<span class={styles.title}>{title}</span>
+	<span class={styles.title}>
+		<Phrases text={title} />
+	</span>
 </Tag>

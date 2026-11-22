@@ -39,6 +39,9 @@
 	line-height: 1.6;
 	color: var(--color-text);
 	letter-spacing: 0.04em;
+	// Phrases で入れた <wbr> の位置でだけ改行する
+	word-break: keep-all;
+	overflow-wrap: anywhere;
 	transition: color 0.2s;
 }
 
