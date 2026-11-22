@@ -1,0 +1,18 @@
+---
+import { loadDefaultJapaneseParser } from "budoux";
+
+interface Props {
+	text: string;
+}
+
+const { text } = Astro.props;
+// 文節の区切りに <wbr> を入れる。word-break: keep-all と組み合わせて、文節の途中で改行しないようにする
+const phrases = loadDefaultJapaneseParser().parse(text);
+---
+
+{phrases.map((phrase, i) => (
+	<>
+		{i > 0 && <wbr />}
+		{phrase}
+	</>
+))}

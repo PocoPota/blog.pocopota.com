@@ -1,8 +1,15 @@
 ---
 import styles from "./Footer.module.scss";
+
+interface Props {
+	// トップの記事一覧に合わせて広げる
+	wide?: boolean;
+}
+
+const { wide = false } = Astro.props;
 ---
 
-<footer class={styles.footer}>
+<footer class:list={[styles.footer, wide && styles.wide]}>
 	<ul class={styles.links}>
 		<li>
 			<a href="https://pocopota.io">pocopota.io</a>

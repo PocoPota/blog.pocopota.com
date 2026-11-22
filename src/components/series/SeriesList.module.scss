@@ -1,0 +1,18 @@
+.section + .section {
+	margin-top: 3rem;
+}
+
+.heading {
+	margin-bottom: 1rem;
+	font-size: 0.8125rem;
+	color: var(--color-text-light);
+	letter-spacing: 0.08em;
+}
+
+.list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(18rem, 100%), 1fr));
+	gap: 2.5rem 2rem;
+	padding: 0;
+	list-style: none;
+}

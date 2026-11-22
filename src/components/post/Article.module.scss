@@ -14,6 +14,20 @@
 	border-bottom: 1px solid var(--color-border);
 }
 
+.series {
+	margin-bottom: 0.75rem;
+
+	a {
+		color: var(--color-primary);
+		text-decoration: none;
+
+		&:hover,
+		&:focus-visible {
+			color: var(--color-primary-dark);
+		}
+	}
+}
+
 .title {
 	margin-bottom: 1rem;
 	font-family: var(--font-family-heading);
@@ -23,6 +37,9 @@
 	line-height: 1.5;
 	color: var(--color-text);
 	letter-spacing: 0.05em;
+	// Phrases で入れた <wbr> の位置でだけ改行する
+	word-break: keep-all;
+	overflow-wrap: anywhere;
 
 	@media (max-width: 600px) {
 		font-size: 1.5rem;
@@ -133,6 +150,36 @@
 			border-left: 2px solid var(--color-border);
 		}
 
+		// コラム。先頭の段落の太字を見出しとして扱う
+		aside {
+			padding: 1.5rem 1.75rem;
+			margin: 2.5rem 0;
+			font-size: 0.9375rem;
+			border: 1px solid var(--color-border);
+			border-radius: var(--radius-md);
+
+			&::before {
+				display: block;
+				margin-bottom: 0.5rem;
+				font-size: 0.75rem;
+				color: var(--color-primary);
+				letter-spacing: 0.16em;
+				content: "コラム";
+			}
+
+			> p:first-child strong {
+				font-family: var(--font-family-heading);
+				font-size: 1.125rem;
+				font-weight: 600;
+				font-feature-settings: "palt";
+				letter-spacing: 0.04em;
+			}
+
+			> :last-child {
+				margin-bottom: 0;
+			}
+		}
+
 		code {
 			font-family: var(--font-family-mono);
 			font-size: 0.875em;
@@ -187,6 +234,13 @@
 			border-top: 1px solid var(--color-border);
 		}
 	}
+}
+
+// シリーズの記事一覧など、本文のあとに置く要素。本文の装飾が混ざらないよう .body の外に置く
+.footer {
+	padding-top: 2.5rem;
+	margin-top: 3.5rem;
+	border-top: 1px solid var(--color-border);
 }
 
 // 旧ブログから移した記事の本文が使っている商品リンクボックスとチェックリストの囲み

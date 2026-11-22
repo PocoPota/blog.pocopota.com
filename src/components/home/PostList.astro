@@ -1,5 +1,9 @@
 ---
+import { getCollection } from "astro:content";
+
 import FormattedDate from "@/components/common/FormattedDate.astro";
+import PostCard from "@/components/common/PostCard.astro";
+import { getSeriesGroups } from "@/lib/series";
 
 import styles from "./PostList.module.scss";
 
@@ -11,19 +15,68 @@ interface Props {
 }
 
 const { page } = Astro.props;
+
+const seriesEntries = await getCollection("series");
+const seriesTitles = new Map(
+	seriesEntries.map((series) => [series.id, series.data.title]),
+);
+// シリーズの欄は1ページ目にだけ出す
+const seriesCards =
+	page.currentPage === 1
+		? await Promise.all(
+				seriesEntries.map(async (series) => {
+					const posts = (await getSeriesGroups(series)).flatMap(
+						(group) => group.posts,
+					);
+					return {
+						series,
+						count: posts.length,
+						updated: new Date(
+							Math.max(...posts.map((post) => post.data.date.valueOf())),
+						),
+					};
+				}),
+			)
+		: [];
 ---
 
 <h1 class="sr-only">記事一覧</h1>
-<ul class={styles.list}>
-	{page.data.map((post) => (
-		<li>
-			<a class={styles.item} href={`/${post.id}/`}>
-				<FormattedDate date={post.data.date} />
-				<span class={styles.title}>{post.data.title}</span>
-			</a>
-		</li>
-	))}
-</ul>
+{seriesCards.length > 0 && (
+	<section class={styles.section}>
+		<h2 class={styles.heading}>シリーズ</h2>
+		<ul class={styles.list}>
+			{seriesCards.map(({ series, count, updated }) => (
+				<li>
+					<PostCard
+						title={series.data.title}
+						image={`/thumbnails/series/${series.id}.png`}
+						href={`/series/${series.id}/`}
+					>
+						<FormattedDate date={updated} /> 更新 · {count}本の記事
+					</PostCard>
+				</li>
+			))}
+		</ul>
+	</section>
+)}
+<section class={styles.section}>
+	{seriesCards.length > 0 && <h2 class={styles.heading}>記事</h2>}
+	<ul class={styles.list}>
+		{page.data.map((post) => (
+			<li>
+				<PostCard
+					title={post.data.title}
+					image={post.data.thumbnail ?? `/thumbnails/${post.id}.png`}
+					href={`/${post.id}/`}
+				>
+					<FormattedDate date={post.data.date} />
+					{post.data.series &&
+						` · シリーズ「${seriesTitles.get(post.data.series.id.id)}」`}
+				</PostCard>
+			</li>
+		))}
+	</ul>
+</section>
 {page.lastPage > 1 && (
 	<nav class={styles.pagination} aria-label="ページ送り">
 		{page.url.prev && <a href={page.url.prev}>新しい記事</a>}

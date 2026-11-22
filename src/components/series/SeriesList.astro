@@ -1,0 +1,33 @@
+---
+import FormattedDate from "@/components/common/FormattedDate.astro";
+import PostCard from "@/components/common/PostCard.astro";
+
+import styles from "./SeriesList.module.scss";
+
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+	heading: string;
+	posts: CollectionEntry<"posts">[];
+	currentId?: string;
+}
+
+const { heading, posts, currentId } = Astro.props;
+---
+
+<section class={styles.section}>
+	<h2 class={styles.heading}>{heading}</h2>
+	<ol class={styles.list}>
+		{posts.map((post, i) => (
+			<li>
+				<PostCard
+					title={post.data.title}
+					image={post.data.thumbnail ?? `/thumbnails/${post.id}.png`}
+					href={post.id === currentId ? undefined : `/${post.id}/`}
+				>
+					{i + 1}/{posts.length} · <FormattedDate date={post.data.date} />
+				</PostCard>
+			</li>
+		))}
+	</ol>
+</section>

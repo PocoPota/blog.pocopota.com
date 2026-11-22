@@ -1,0 +1,36 @@
+---
+import Phrases from "./Phrases.astro";
+import styles from "./PostCard.module.scss";
+
+interface Props {
+	title: string;
+	image: string;
+	// 省略すると、いま読んでいる記事としてリンクにしない
+	href?: string;
+}
+
+const { title, image, href } = Astro.props;
+const Tag = href ? "a" : "div";
+---
+
+<Tag
+	class:list={[styles.card, !href && styles.current]}
+	href={href}
+	aria-current={href ? undefined : "page"}
+>
+	<img
+		class={styles.thumbnail}
+		src={image}
+		alt=""
+		width="800"
+		height="420"
+		loading="lazy"
+	/>
+	<span class={styles.meta}>
+		{!href && <span class={styles.currentLabel}>この記事</span>}
+		<slot />
+	</span>
+	<span class={styles.title}>
+		<Phrases text={title} />
+	</span>
+</Tag>

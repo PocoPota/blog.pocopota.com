@@ -2,9 +2,16 @@
 import { SITE_TITLE } from "@/consts";
 
 import styles from "./Header.module.scss";
+
+interface Props {
+	// トップの記事一覧に合わせて広げる
+	wide?: boolean;
+}
+
+const { wide = false } = Astro.props;
 ---
 
-<header class={styles.header}>
+<header class:list={[styles.header, wide && styles.wide]}>
 	<a class={styles.title} href="/">
 		{SITE_TITLE}
 	</a>

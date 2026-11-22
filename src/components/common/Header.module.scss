@@ -15,3 +15,7 @@
 	letter-spacing: 0.12em;
 	text-decoration: none;
 }
+
+.wide {
+	max-width: calc(var(--wide-width) + 2.5rem);
+}
