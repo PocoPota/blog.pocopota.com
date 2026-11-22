@@ -1,6 +1,6 @@
 ---
 title: "Web の和欧混植で欧文の大きさ・位置・太さを合わせる"
-date: 2026-10-27T12:02:00+09:00
+date: 2026-11-22T12:02:00+09:00
 description: "size-adjust や font-weight、font-variation-settings などで、欧文の大きさ・位置・太さを和文に合わせる方法を紹介します。"
 series:
   id: web-font
@@ -53,38 +53,30 @@ CSS の `@font-face` では欧文の上下の位置を変えられないので�
 <p>公式<span class="latin">Web</span>サイト</p>
 ```
 
-動かし方は、実装に合わせて次の2つから選べます。
+たとえば相対配置（[`position: relative`](https://developer.mozilla.org/ja/docs/Web/CSS/position)）なら、次のように書きます。
 
 ```css
-/* transform で動かす */
-.latin {
-  display: inline-block;
-  transform: translateY(-0.05em);
-}
-
-/* 相対配置で動かす */
 .latin {
   position: relative;
   top: -0.05em;
 }
 ```
 
-`transform` はインライン要素には効かないので、`display: inline-block` と組み合わせます。
-`inline-block` にした要素の中では改行されないので、長い欧文を囲むと行の折り返しが不自然になります。
-相対配置なら、インライン要素のまま動かせます。
+相対配置は、要素を元の位置から表示の上だけずらし、周りのレイアウトには影響しません。
+インライン要素のまま動かせるので、行の折り返しも変わりません。
 
-どちらの方法でも、欧文が出てくるたびにマークアップを分ける必要があります。
+ただし、欧文が出てくるたびにマークアップを分ける必要があります。
 同じ要素に `font-size` を指定すれば、`size-adjust` の代わりに大きさも調整できます。
 
-`@font-face` には [`ascent-override`](https://developer.mozilla.org/ja/docs/Web/CSS/@font-face/ascent-override) と `descent-override` という、フォントのアセンダーとディセンダーの値を上書きする記述子もあります。
-しかし、変わるのは行の高さの計算に使う値で、グリフを描く位置ではありません。
-同じ行のグリフはどのフォントのものでも共通のベースラインに並ぶので、これらの記述子では欧文のベースラインだけを上げることはできません。
+なお、`@font-face` の [`ascent-override`](https://developer.mozilla.org/ja/docs/Web/CSS/@font-face/ascent-override) と [`descent-override`](https://developer.mozilla.org/ja/docs/Web/CSS/@font-face/descent-override) は、フォントのアセンダーとディセンダーの値を上書きする記述子です。
+変わるのは行の高さの計算に使う値で、グリフを描く位置ではありません。
+同じ要素の中の文字は、和文フォントでも欧文フォントでも、その要素の [`dominant-baseline`](https://developer.mozilla.org/ja/docs/Web/CSS/dominant-baseline) で決まる同じベースラインにそろえて並ぶので、これらの記述子で欧文だけを上げることはできません。
 
 ## 太さ
 
 欧文は大きくした分だけ線も太く見えるので、和文と並べながら欧文のウェイトを調整します。
 
-`@font-face` の `font-weight` は、そのフォントをどのウェイトとして扱うかを宣言する記述子です。
+`@font-face` の [`font-weight`](https://developer.mozilla.org/ja/docs/Web/CSS/@font-face/font-weight) は、そのフォントをどのウェイトとして扱うかを宣言する記述子です。
 ウェイトごとにファイルが分かれたフォントなら、宣言するウェイトに別のウェイトのファイルを割り当てます。
 
 ```css
@@ -105,14 +97,43 @@ CSS の `@font-face` では欧文の上下の位置を変えられないので�
 }
 ```
 
-和文フォントの `@font-face` にも、同じウェイトを宣言しておきます。
-ブラウザはまずウェイトで `@font-face` を絞り込むので、ウェイトが合わない和文フォントは組み合わせに入らず、和文が別のフォントで表示されてしまいます。
+このとき、和文フォントの `@font-face` にも、使うウェイトを宣言しておきます。
+宣言しないと、太字の部分の和文が別のフォントで表示されます。
+
+<aside>
+
+**太字の和文が別のフォントになる理由**
+
+ブラウザは、`font-weight` を書かない `@font-face` を、[ウェイト 400 のフォントとして扱います](https://drafts.csswg.org/css-fonts-4/#font-prop-desc)。
+Outfit の `@font-face` を上のように書き、和文フォントの `@font-face` に `font-weight` を書かないと、ブラウザは欧文と和文を次の `@font-face` で表示します。
+
+| 文字 | 通常（要素の `font-weight: 400`） | 太字（要素の `font-weight: 700`）         |
+| ---- | --------------------------------- | ----------------------------------------- |
+| 欧文 | Outfit Light                      | Outfit SemiBold                           |
+| 和文 | Noto Sans JP                      | なし（`font-family` の次の `sans-serif`） |
+
+ブラウザは、要素の `font-weight` に合う `@font-face` があれば、ウェイトの合わない `@font-face` を、その要素の文字に使う候補から外します（[CSS Fonts の照合の手順](https://drafts.csswg.org/css-fonts-4/#font-matching-algorithm)）。
+太字の部分には 700 の Outfit SemiBold の `@font-face` があるので、ブラウザは 400 の Noto Sans JP の `@font-face` を太字の文字に使いません。
+Outfit SemiBold には和文のグリフがないので、ブラウザは太字の和文を `font-family` の次に書いた `sans-serif` で表示します。
+
+</aside>
+
+和文フォントが[バリアブルフォント](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_fonts/Variable_fonts_guide)なら、次のようにウェイトを範囲で宣言できます。
+
+```css
+@font-face {
+  font-family: "Mix";
+  src: url("/fonts/NotoSansJP[wght].woff2") format("woff2");
+  font-weight: 100 900;
+}
+```
 
 バリアブルフォントは1つのファイルにすべてのウェイトが入っていて、要素の `font-weight` の値がそのままウェイト軸（`wght`）の値になります。
 そのため、ファイルを割り当て直す方法は使えません。
 
 代わりに、`@font-face` の [`font-variation-settings`](https://developer.mozilla.org/ja/docs/Web/CSS/@font-face/font-variation-settings) 記述子で `wght` の値を指定します。
-この記述子は `font-weight` より優先されるので、宣言したウェイトとは違う太さで表示できます。
+CSS Fonts の仕様では、`font-weight` から決まる値を当てたあとに `@font-face` の `font-variation-settings` を当てるので、記述子のほうが優先されます（[Feature and variation precedence](https://drafts.csswg.org/css-fonts-4/#feature-variation-precedence)）。
+そのため、宣言したウェイトとは違う太さで表示できます。
 
 ```css
 @font-face {
@@ -133,5 +154,14 @@ CSS の `@font-face` では欧文の上下の位置を変えられないので�
 ```
 
 記述子で `wght` の値を固定するので、使うウェイトごとに `@font-face` を書きます。
-この記述子に対応しているのは Chrome 140 以降と Firefox 62 以降で、2026年10月時点で Safari は対応していません。
+[MDN の互換性データ](https://github.com/mdn/browser-compat-data)では、この記述子に対応しているのは Chrome 140 以降と Firefox 62 以降で、2026年10月時点で Safari は対応していません。
 Safari では、欧文が `font-weight` どおりの太さ（この例では 400 と 700）で表示されます。
+
+## 参考文献
+
+- [Webフォント実践ガイド](https://gihyo.jp/book/2025/978-4-297-15056-3)
+- [ふつうのデザイナーのためのタイポグラフィが上手くなる本](https://www.shoeisha.co.jp/book/detail/9784798179094)
+- [デザインの｢混植｣って何？ 知っているようで知らない｢混植｣の話と基本的な使い方を解説 ｜デザインを深掘り MdN](https://www.mdn.co.jp/design/BasicMethod/7314)
+- [日本語の中でアルファベットを組む！ 和欧混植のポイント｜モリサワ　note編集部](https://note.morisawa.co.jp/n/na6e9f79316a8)
+- [CSS Fonts Module Level 4｜W3C](https://drafts.csswg.org/css-fonts-4/)
+- [可変フォントガイド｜MDN](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_fonts/Variable_fonts_guide)

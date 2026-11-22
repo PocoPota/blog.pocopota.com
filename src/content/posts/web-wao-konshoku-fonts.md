@@ -1,6 +1,6 @@
 ---
 title: "Web で和文フォントと欧文フォントを組み合わせる"
-date: 2026-10-27T12:01:00+09:00
+date: 2026-11-22T12:01:00+09:00
 description: "font-family と @font-face、unicode-range で、和文フォントと欧文フォントを組み合わせる方法を紹介します。"
 series:
   id: web-font
@@ -13,7 +13,7 @@ CSS で和欧混植をする最初の段階として、和文フォントと欧�
 
 ## font-family で並べる
 
-CSS で混植をするいちばん簡単な方法は、`font-family` に欧文フォント、和文フォントの順で並べることです。
+CSS で混植をするいちばん簡単な方法は、[`font-family`](https://developer.mozilla.org/ja/docs/Web/CSS/font-family) に欧文フォント、和文フォントの順で並べることです。
 
 ```css
 body {
@@ -48,12 +48,12 @@ body {
 }
 ```
 
-同じファミリーの中で範囲が重なる場合は、あとに定義した `@font-face` が優先されます。
+同じファミリーの中で範囲が重なる場合は、あとに定義した `@font-face` が優先されます（[CSS Fonts の `unicode-range`](https://drafts.csswg.org/css-fonts-4/#descdef-font-face-unicode-range)）。
 この例では、ASCII の範囲は Outfit で、それ以外は Noto Sans JP で表示されます。
 
 <aside>
 
-**コラム　スペースを範囲から外す理由**
+**スペースを範囲から外す理由**
 
 上の例では、Outfit の範囲を U+0020（スペース）ではなく U+0021 から始めています。
 
@@ -70,7 +70,7 @@ Outfit と幅が違えば語間の見え方は少し変わりますが、行の�
 
 ## Google Fonts を使う場合
 
-Google Fonts の CSS を読み込むと、`@font-face` は Google Fonts 側で定義されます。
+[Google Fonts の CSS](https://developers.google.com/fonts/docs/css2) を読み込むと、`@font-face` は Google Fonts 側で定義されます。
 自分で書いた記述子は足せないので、「[Web の和欧混植で欧文の大きさ・位置・太さを合わせる](/web-wao-konshoku-size/)」で紹介する `size-adjust` などの調整はできません。
 
 調整したいフォントは、ファイルを自分で配信して `@font-face` を書きます。
@@ -90,3 +90,10 @@ body {
 ```
 
 和文フォントも自分で配信する場合は、ファイルが大きいので、サブセット化や `unicode-range` での分割も自分で行う必要があります。
+
+## 参考文献
+
+- [Webフォント実践ガイド](https://gihyo.jp/book/2025/978-4-297-15056-3)
+- [ふつうのデザイナーのためのタイポグラフィが上手くなる本](https://www.shoeisha.co.jp/book/detail/9784798179094)
+- [CSS Fonts Module Level 4｜W3C](https://drafts.csswg.org/css-fonts-4/)
+- [CSS API update｜Google Fonts](https://developers.google.com/fonts/docs/css2)

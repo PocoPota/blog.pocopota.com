@@ -1,6 +1,6 @@
 ---
 title: "和欧混植の基本"
-date: 2026-10-27T12:00:00+09:00
+date: 2026-11-22T12:00:00+09:00
 description: "混植とは何か、和文フォントと欧文フォントの作りの違いを紹介します。"
 series:
   id: web-font
@@ -41,9 +41,5 @@ Adobe 製品では、「合成フォント」という機能で混植を設定�
 - [ふつうのデザイナーのためのタイポグラフィが上手くなる本](https://www.shoeisha.co.jp/book/detail/9784798179094)
 - [デザインの｢混植｣って何？ 知っているようで知らない｢混植｣の話と基本的な使い方を解説 ｜デザインを深掘り MdN](https://www.mdn.co.jp/design/BasicMethod/7314)
 - [日本語の中でアルファベットを組む！ 和欧混植のポイント｜モリサワ　note編集部](https://note.morisawa.co.jp/n/na6e9f79316a8)
-- [オプティカル？メトリクス？Adobeソフトの文字詰め機能を解説！](https://note.morisawa.co.jp/n/nb96702245df1)
-- [日本語組版処理の要件（JLreq）｜W3C](https://www.w3.org/TR/jlreq/?lang=ja)
-- [レタースペーシング タイポグラフィにおける文字間調整の考え方](https://letter-spacing.mimiguri.co.jp/)
-- [「約物」のアキと調整｜モリサワ note編集部](https://note.morisawa.co.jp/n/nff5591a07714)
 
 [^hiragino]: [【和欧混植徹底解説！後編】「合成フォント」設定で違和感なく和文と欧文を組み合わせる方法と設定サンプル集｜ヒラギノフォント公式note](https://note.screen-hiragino.jp/n/nd6b6a95a1842)
